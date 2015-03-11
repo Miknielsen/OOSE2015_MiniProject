@@ -23,7 +23,7 @@ public class SimpleSlickGame extends BasicGame
 	@Override
 	public void render(GameContainer gc, Graphics g) throws SlickException
 	{
-		g.drawRect(620,700,40,10);                                           //Draws a rectangle (pos,pos,size,size)
+		g.drawString("Hello World!", 250, 200);
 	}
 
 	public static void main(String[] args)
@@ -31,8 +31,8 @@ public class SimpleSlickGame extends BasicGame
 		try
 		{
 			AppGameContainer appgc;
-			appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));   //Name of the game
-			appgc.setDisplayMode(1280, 720, false);                          //Window size in 1280*720p
+			appgc = new AppGameContainer(new SimpleSlickGame("Simple Slick Game"));
+			appgc.setDisplayMode(640, 480, false);
 			appgc.start();
 		}
 		catch (SlickException ex)
