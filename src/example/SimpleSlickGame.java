@@ -54,7 +54,7 @@ public class SimpleSlickGame extends BasicGame {
 		try {
 			AppGameContainer appgc;
 			appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                   //Name of the game
-			appgc.setDisplayMode(screenW, screenH, false);                                   //Window size in 1024p*640p
+			appgc.setDisplayMode(screenW, screenH, true);                                   //Window size in 1024p*640p
 			appgc.start();
 		} catch (SlickException ex) {
 			Logger.getLogger(SimpleSlickGame.class.getName()).log(Level.SEVERE, null, ex);
