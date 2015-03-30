@@ -5,17 +5,13 @@ import org.newdawn.slick.Input;
 import org.newdawn.slick.util.Log;
 
 public class Player {
+    
+    private float xPos, yPos;
 
-        
     public void CreatePlayer() {
         
     }
-
-    
-    float xPos, yPos;
-
-    
-    
+       
     public void Movement(GameContainer key) {
         
         Input keyInput = key.getInput();                                   //Save the input passed from the method as keyInput
