@@ -1,11 +1,11 @@
-/*----------------------------------------------------------------
+/*------------------------------------------------------------------------------------
  *  Author:        Mads Kondrup Haugaard, Mikkel Moenster Nielsen, Nicolai Foldager
  *  Written:       30/3/2015
  *  Last updated:  30/3/2015
  *  
  *  WRITE WHAT THE PROGRAM DOES HERE
  *
- *----------------------------------------------------------------*/
+ *------------------------------------------------------------------------------------*/
 
 package example;
 import java.util.logging.Level;
@@ -19,10 +19,10 @@ import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.util.Log;
 
-public class SimpleSlickGame extends BasicGame
-{
-	public SimpleSlickGame(String gamename)
-	{
+
+public class SimpleSlickGame extends BasicGame {
+    
+	public SimpleSlickGame(String gamename) {
 		super(gamename);
 	}
 
@@ -39,25 +39,24 @@ public class SimpleSlickGame extends BasicGame
 	        Log.debug("Game terminated due to ESC being pressed!");
 	    }
 	    
-	    
-	    
 	}
 
 	public void render(GameContainer gc, Graphics g) throws SlickException 	{
 		g.drawRect(512,610,40,10);                                                           //Draws a rectangle (pos,pos,size,size)
 	}
 
-	public static void main(String[] args)
-	{
-		try
-		{
+	public static void main(String[] args) {
+	    
+	    //Variables for setDisplaymode size
+	    int screenH = 640;
+	    int screenW = 1024;
+	    
+		try {
 			AppGameContainer appgc;
 			appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                   //Name of the game
-			appgc.setDisplayMode(1024, 640, false);                                          //Window size in 1024p*640p
+			appgc.setDisplayMode(screenW, screenH, false);                                   //Window size in 1024p*640p
 			appgc.start();
-		}
-		catch (SlickException ex)
-		{
+		} catch (SlickException ex) {
 			Logger.getLogger(SimpleSlickGame.class.getName()).log(Level.SEVERE, null, ex);
 		}
 

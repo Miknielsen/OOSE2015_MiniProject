@@ -6,6 +6,9 @@ import org.newdawn.slick.util.Log;
 
 public class Player {
         
+    public void CreatePlayer() {
+        
+    }
     
     
     public void Movement(GameContainer key) {
