@@ -22,6 +22,17 @@ import org.newdawn.slick.util.Log;
 
 public class SimpleSlickGame extends BasicGame {
     
+	
+	public static int GetScreenWorkingWidth() {
+	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width;
+	    
+	}
+
+	public static int GetScreenWorkingHeight() {
+	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().height;
+	}
+	
+	
 	public SimpleSlickGame(String gamename) {
 		super(gamename);
 	}
@@ -45,16 +56,15 @@ public class SimpleSlickGame extends BasicGame {
 		g.drawRect(512,610,40,10);                                                           //Draws a rectangle (pos,pos,size,size)
 	}
 
+	
+	
 	public static void main(String[] args) {
 	    
-	    //Variables for setDisplaymode size
-	    int screenH = 640;
-	    int screenW = 1024;
-	    
+		
 		try {
 			AppGameContainer appgc;
 			appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                   //Name of the game
-			appgc.setDisplayMode(screenW, screenH, true);                                   //Window size in 1024p*640p
+			appgc.setDisplayMode(GetScreenWorkingWidth(), GetScreenWorkingHeight(), false);  //Window size in 1024p*640p
 			appgc.start();
 		} catch (SlickException ex) {
 			Logger.getLogger(SimpleSlickGame.class.getName()).log(Level.SEVERE, null, ex);
