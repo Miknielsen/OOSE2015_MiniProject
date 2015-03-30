@@ -17,6 +17,7 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.util.Log;
 
 public class SimpleSlickGame extends BasicGame
 {
@@ -35,6 +36,7 @@ public class SimpleSlickGame extends BasicGame
 	    Input input = gc.getInput();
 	    if(input.isKeyPressed(Input.KEY_ESCAPE)) {
 	        System.exit(0);
+	        Log.debug("Game terminated due to ESC being pressed!");
 	    }
 	    
 	    
