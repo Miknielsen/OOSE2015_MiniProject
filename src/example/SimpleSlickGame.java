@@ -3,7 +3,9 @@
  *  Written:       30/3/2015
  *  Last updated:  30/3/2015
  *  
- *  WRITE WHAT THE PROGRAM DOES HERE
+ *  BREAKOUT GAME
+ *  This game creates a player model, multiple 'enemy' blocks to destroy and a ball
+ *  that is used to destroy these enemy blocks. 
  *
  *------------------------------------------------------------------------------------*/
 
@@ -31,7 +33,7 @@ public class SimpleSlickGame extends BasicGame {
 
 	@Override
 	public void update(GameContainer gc, int i) throws SlickException {
-	    
+	    	    
 	    //DEBUG - CLOSES THE GAME WHEN ESCAPE IS PRESSED. DO-NOT-DELETE
 	    Input input = gc.getInput();
 	    if(input.isKeyPressed(Input.KEY_ESCAPE)) {
@@ -42,7 +44,7 @@ public class SimpleSlickGame extends BasicGame {
 	}
 
 	public void render(GameContainer gc, Graphics g) throws SlickException 	{
-		g.drawRect(512,610,40,10);                                                           //Draws a rectangle (pos,pos,size,size)
+		g.drawRect(0,610,40,10);                                                           //Draws a rectangle (pos,pos,size,size)
 	}
 
 	public static void main(String[] args) {
@@ -54,7 +56,7 @@ public class SimpleSlickGame extends BasicGame {
 		try {
 			AppGameContainer appgc;
 			appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                   //Name of the game
-			appgc.setDisplayMode(screenW, screenH, true);                                   //Window size in 1024p*640p
+			appgc.setDisplayMode(screenW, screenH, false);                                    //Window size in 1024p*640p
 			appgc.start();
 		} catch (SlickException ex) {
 			Logger.getLogger(SimpleSlickGame.class.getName()).log(Level.SEVERE, null, ex);
