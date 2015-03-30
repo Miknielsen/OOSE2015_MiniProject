@@ -34,7 +34,7 @@ public class Player {
         Input keyInput = key.getInput();                                   //Save the input passed from the method as keyInput
         
         if(keyInput.isKeyPressed(Input.KEY_D)) {       
-            xPos += 10;                                                    //Move the Player 10px to the right
+            playerXpos += 10;                                              //Move the Player 10px to the right
             
             Log.debug("Player moved right");
         }
