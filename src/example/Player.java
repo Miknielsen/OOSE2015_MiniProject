@@ -5,15 +5,18 @@ import org.newdawn.slick.Input;
 import org.newdawn.slick.util.Log;
 
 public class Player {
-        
+    
+    float xPos, yPos;
     
     
     public void Movement(GameContainer key) {
         
-        Input input = key.getInput();
-        if(input.isKeyPressed(Input.KEY_D)) {
+        Input keyInput = key.getInput();                                   //Save the input passed from the method as keyInput
+        
+        if(keyInput.isKeyPressed(Input.KEY_D)) {       
+            xPos += 10;                                                    //Move the Player 10px to the right
             
-            Log.debug("Game terminated due to ESC being pressed!");
+            Log.debug("Player moved right");
         }
         
     }
