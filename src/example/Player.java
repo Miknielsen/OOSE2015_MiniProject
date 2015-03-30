@@ -6,9 +6,26 @@ import org.newdawn.slick.util.Log;
 
 public class Player {
     
-    private float xPos, yPos;
-
+    private float playerXpos, playerYpos, playerLength, playerHeight; 
+    
+    public float getter(String varName) {        
+        if (varName.equals(playerXpos))
+            return playerXpos;
+        else if (varName.equals(playerYpos))
+            return playerYpos;
+        else if (varName.equals(playerLength))
+            return playerLength;
+        else if (varName.equals(playerHeight))
+            return playerHeight;
+        else
+            return -1;
+    }
+    
     public void CreatePlayer() {
+        
+        //Create player - Rectangle
+        
+        //Fixiate player on the y-axis
         
     }
        
@@ -23,11 +40,5 @@ public class Player {
         }
         
     }
-    
-    //Create player - Rectangle
-    
-    
-    //Fixiate player on the y-axis
-    //Allow player to move on the x-axis with the arrow-keys or mouse
     
 }
