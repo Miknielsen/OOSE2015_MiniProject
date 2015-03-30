@@ -15,6 +15,7 @@ import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 public class SimpleSlickGame extends BasicGame
@@ -28,10 +29,19 @@ public class SimpleSlickGame extends BasicGame
 	public void init(GameContainer gc) throws SlickException {}
 
 	@Override
-	public void update(GameContainer gc, int i) throws SlickException {}
+	public void update(GameContainer gc, int i) throws SlickException {
+	    
+	    //DEBUG - CLOSES THE GAME WHEN ESCAPE IS PRESSED. DO-NOT-DELETE
+	    Input input = gc.getInput();
+	    if(input.isKeyPressed(Input.KEY_ESCAPE)) {
+	        System.exit(0);
+	    }
+	    
+	    
+	    
+	}
 
-	public void render(GameContainer gc, Graphics g) throws SlickException
-	{
+	public void render(GameContainer gc, Graphics g) throws SlickException 	{
 		g.drawRect(512,610,40,10);                                                           //Draws a rectangle (pos,pos,size,size)
 	}
 
@@ -50,5 +60,6 @@ public class SimpleSlickGame extends BasicGame
 		}
 
 	}
-
+	
 }
+
