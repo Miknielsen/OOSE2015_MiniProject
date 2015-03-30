@@ -1,6 +1,16 @@
+/*----------------------------------------------------------------
+ *  Author:        Mads Kondrup Haugaard, Mikkel Moenster Nielsen, Nicolai Foldager
+ *  Written:       30/3/2015
+ *  Last updated:  30/3/2015
+ *  
+ *  WRITE WHAT THE PROGRAM DOES HERE
+ *
+ *----------------------------------------------------------------*/
+
 package example;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
@@ -20,7 +30,6 @@ public class SimpleSlickGame extends BasicGame
 	@Override
 	public void update(GameContainer gc, int i) throws SlickException {}
 
-	
 	public void render(GameContainer gc, Graphics g) throws SlickException
 	{
 		g.drawRect(512,610,40,10);                                                           //Draws a rectangle (pos,pos,size,size)
@@ -39,7 +48,7 @@ public class SimpleSlickGame extends BasicGame
 		{
 			Logger.getLogger(SimpleSlickGame.class.getName()).log(Level.SEVERE, null, ex);
 		}
-		
+
 	}
 
 }
