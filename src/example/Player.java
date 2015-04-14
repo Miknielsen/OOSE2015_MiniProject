@@ -21,14 +21,14 @@ public class Player {
         
     }
     
-    public void MoveRight() {
+    public void moveRight() {
         if(playerXpos < SimpleSlickGame.getScreenWorkingWidth())
             playerXpos += playerLength;
         
         System.out.println(playerXpos);
     }
     
-    public void MoveLeft() {
+    public void moveLeft() {
         if(playerXpos > 0)
             playerXpos -= playerLength;
     }
