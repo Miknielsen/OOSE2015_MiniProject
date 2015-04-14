@@ -7,7 +7,13 @@ import org.newdawn.slick.util.Log;
 
 public class Player {
     
-    private float playerXpos, playerYpos, playerLength, playerHeight; 
+	public float playerLengthMultiplier = 19;
+	
+    private float 
+    	playerXpos = SimpleSlickGame.GetScreenWorkingWidth()/2,
+    	playerYpos = SimpleSlickGame.GetScreenWorkingHeight()*0.90f,
+    	playerLength = SimpleSlickGame.GetScreenWorkingWidth()/playerLengthMultiplier,
+    	playerHeight = SimpleSlickGame.GetScreenWorkingHeight()*0.02f; 
     
     /**
      * Returns a float
@@ -30,7 +36,7 @@ public class Player {
     
     public void createPlayer(Graphics g) {
         
-        g.drawRect(SimpleSlickGame.GetScreenWorkingWidth()/2,610,40,10);                                  //Draws a rectangle (pos,pos,size,size)
+        g.drawRect(playerXpos,playerYpos, playerLength,playerHeight);                                  //Draws a rectangle (pos,pos,size,size)
         
     }
        
