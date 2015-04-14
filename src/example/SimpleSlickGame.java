@@ -23,18 +23,7 @@ import org.newdawn.slick.util.Log;
 
 
 public class SimpleSlickGame extends BasicGame {
-    
-	
-	public static int GetScreenWorkingWidth() {                                                                 //Get screen width
-	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width;
-	    
-	}
-
-	public static int GetScreenWorkingHeight() {
-	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().height;     //Get screen height
-	}
-	
-	
+    	
 	public SimpleSlickGame(String gamename) {
 		super(gamename);
 	}
@@ -59,17 +48,12 @@ public class SimpleSlickGame extends BasicGame {
 
 		g.drawRect(GetScreenWorkingWidth()/2,610,40,10);                                  //Draws a rectangle (pos,pos,size,size)
 	}
-
-	
 	
 	public static void main(String[] args) {
 	    
 		System.out.println(GetScreenWorkingWidth()/2);
 		try {
 			AppGameContainer appgc;
-
-			appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                   //Name of the game
-			appgc.setDisplayMode(screenW, screenH, false);                                    //Window size in 1024p*640p
 
 			appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                   //Name of the game
 			appgc.setDisplayMode(GetScreenWorkingWidth(), GetScreenWorkingHeight(), false);  //Fit window to screen size
@@ -79,6 +63,25 @@ public class SimpleSlickGame extends BasicGame {
 			Logger.getLogger(SimpleSlickGame.class.getName()).log(Level.SEVERE, null, ex);
 		}
 
+	}
+	
+	/**
+	 * Gets the width of the entire screen
+	 * 
+	 * @return width of screen in pixel
+	 */
+	public static int GetScreenWorkingWidth() {                                                                 //Get screen width
+	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width;
+	    
+	}
+	
+	/**
+	 * Gets the height of the entire screen
+	 * 
+	 * @return height of screen in pixel
+	 */
+	public static int GetScreenWorkingHeight() {
+	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().height;     //Get screen height
 	}
 	
 }
