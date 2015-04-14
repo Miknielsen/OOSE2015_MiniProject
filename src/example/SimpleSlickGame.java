@@ -55,12 +55,9 @@ public class SimpleSlickGame extends BasicGame {
 	}
 
 	public void render(GameContainer gc, Graphics g) throws SlickException 	{
-<<<<<<< HEAD
 		g.drawRect(0,610,40,10);                                                           //Draws a rectangle (pos,pos,size,size)
-=======
+
 		g.drawRect(GetScreenWorkingWidth()/2,610,40,10);                                  //Draws a rectangle (pos,pos,size,size)
-		
->>>>>>> branch 'master' of https://github.com/Miknielsen/OOSE2015_MiniProject.git
 	}
 
 	
