@@ -13,7 +13,7 @@ public class Player {
      * Returns a float
      * 
      * @param varName name of the float you want
-     * @return the value of the float variable chosen in the parameters.
+     * @return the value of the 
      */
     public float getter(String varName) {        
         if (varName.equals(playerXpos))
