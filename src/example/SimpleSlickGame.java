@@ -23,7 +23,18 @@ import org.newdawn.slick.util.Log;
 
 
 public class SimpleSlickGame extends BasicGame {
-    	
+    
+	
+	public static int GetScreenWorkingWidth() {                                                                 //Get screen width
+	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width;
+	    
+	}
+
+	public static int GetScreenWorkingHeight() {
+	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().height;     //Get screen height
+	}
+	
+	
 	public SimpleSlickGame(String gamename) {
 		super(gamename);
 	}
@@ -44,6 +55,8 @@ public class SimpleSlickGame extends BasicGame {
 	}
 
 	public void render(GameContainer gc, Graphics g) throws SlickException 	{
+		g.drawRect(0,610,40,10);                                                           //Draws a rectangle (pos,pos,size,size)
+
 		g.drawRect(GetScreenWorkingWidth()/2,610,40,10);                                  //Draws a rectangle (pos,pos,size,size)
 	}
 
@@ -56,6 +69,9 @@ public class SimpleSlickGame extends BasicGame {
 			AppGameContainer appgc;
 
 			appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                   //Name of the game
+			appgc.setDisplayMode(screenW, screenH, false);                                    //Window size in 1024p*640p
+
+			appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                   //Name of the game
 			appgc.setDisplayMode(GetScreenWorkingWidth(), GetScreenWorkingHeight(), false);  //Fit window to screen size
 
 			appgc.start();
@@ -64,16 +80,6 @@ public class SimpleSlickGame extends BasicGame {
 		}
 
 	}
-	
-	public static int GetScreenWorkingWidth() {                                                                 //Get screen width
-	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width;
-	    
-	}
-
-	public static int GetScreenWorkingHeight() {
-	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().height;     //Get screen height
-	}
-
 	
 }
 
