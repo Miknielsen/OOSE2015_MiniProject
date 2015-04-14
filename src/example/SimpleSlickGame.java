@@ -67,13 +67,13 @@ public class SimpleSlickGame extends BasicGame {
 		System.out.println(GetScreenWorkingWidth()/2);
 		try {
 			AppGameContainer appgc;
-<<<<<<< HEAD
+
 			appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                   //Name of the game
 			appgc.setDisplayMode(screenW, screenH, false);                                    //Window size in 1024p*640p
-=======
+
 			appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                   //Name of the game
 			appgc.setDisplayMode(GetScreenWorkingWidth(), GetScreenWorkingHeight(), false);  //Fit window to screen size
->>>>>>> branch 'master' of https://github.com/Miknielsen/OOSE2015_MiniProject.git
+
 			appgc.start();
 		} catch (SlickException ex) {
 			Logger.getLogger(SimpleSlickGame.class.getName()).log(Level.SEVERE, null, ex);
