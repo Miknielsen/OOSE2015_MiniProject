@@ -24,6 +24,17 @@ import org.newdawn.slick.util.Log;
 
 public class SimpleSlickGame extends BasicGame {
     
+	
+	public static int GetScreenWorkingWidth() {                                                                 //Get screen width
+	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width;
+	    
+	}
+
+	public static int GetScreenWorkingHeight() {
+	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().height;     //Get screen height
+	}
+	
+	
 	public SimpleSlickGame(String gamename) {
 		super(gamename);
 	}
@@ -44,19 +55,28 @@ public class SimpleSlickGame extends BasicGame {
 	}
 
 	public void render(GameContainer gc, Graphics g) throws SlickException 	{
+<<<<<<< HEAD
 		g.drawRect(0,610,40,10);                                                           //Draws a rectangle (pos,pos,size,size)
+=======
+		g.drawRect(GetScreenWorkingWidth()/2,610,40,10);                                  //Draws a rectangle (pos,pos,size,size)
+		
+>>>>>>> branch 'master' of https://github.com/Miknielsen/OOSE2015_MiniProject.git
 	}
 
+	
+	
 	public static void main(String[] args) {
 	    
-	    //Variables for setDisplaymode size
-	    int screenH = 640;
-	    int screenW = 1024;
-	    
+		System.out.println(GetScreenWorkingWidth()/2);
 		try {
 			AppGameContainer appgc;
+<<<<<<< HEAD
 			appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                   //Name of the game
 			appgc.setDisplayMode(screenW, screenH, false);                                    //Window size in 1024p*640p
+=======
+			appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                   //Name of the game
+			appgc.setDisplayMode(GetScreenWorkingWidth(), GetScreenWorkingHeight(), false);  //Fit window to screen size
+>>>>>>> branch 'master' of https://github.com/Miknielsen/OOSE2015_MiniProject.git
 			appgc.start();
 		} catch (SlickException ex) {
 			Logger.getLogger(SimpleSlickGame.class.getName()).log(Level.SEVERE, null, ex);
