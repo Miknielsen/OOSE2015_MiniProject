@@ -9,7 +9,7 @@ public class Player {
     
 	public float playerLengthMultiplier = 19;
 	
-    private float 
+    public float 
     	playerXpos = SimpleSlickGame.getScreenWorkingWidth()/2,
     	playerYpos = SimpleSlickGame.getScreenWorkingHeight()*0.90f,
     	playerLength = SimpleSlickGame.getScreenWorkingWidth()/playerLengthMultiplier,
@@ -20,18 +20,34 @@ public class Player {
         g.drawRect(playerXpos,playerYpos, playerLength,playerHeight);                                  //Draws a rectangle (pos,pos,size,size)
         
     }
+    
+    public void MoveRight() {
+        if(playerXpos < SimpleSlickGame.getScreenWorkingWidth())
+            playerXpos += playerLength;
+        
+        System.out.println(playerXpos);
+    }
+    
+    public void MoveLeft() {
+        if(playerXpos > 0)
+            playerXpos -= playerLength;
+    }
+    
+    /*
        
     public void movement(GameContainer key) {
         
         Input keyInput = key.getInput();                                  							   //Save the input passed from the method as keyInput
         
         if(keyInput.isKeyPressed(Input.KEY_D)) {       
-            playerXpos += 10;                                              //Move the Player 10px to the right
-            
-            Log.debug("Player moved right");
+            playerXpos += 10;
         }
         
-    }
+        if(keyInput.isKeyPressed(Input.KEY_A)) {       
+            playerXpos -= 10;
+        }
+        
+    }*/
     
     /**
      * Returns a float

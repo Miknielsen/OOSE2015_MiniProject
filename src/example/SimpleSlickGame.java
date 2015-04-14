@@ -35,9 +35,21 @@ public class SimpleSlickGame extends BasicGame {
 
 	@Override
 	public void update(GameContainer gc, int i) throws SlickException {
+	    
+	    Input input = gc.getInput();
+	    
+        if(input.isKeyPressed(Input.KEY_D)) {
+            player.MoveRight();
+            Log.debug("Player moved right");
+        }
+        
+        if(input.isKeyPressed(Input.KEY_A)) {
+            player.MoveLeft();
+            Log.debug("Player moved left");
+        }
 	    	    
 	    //DEBUG - CLOSES THE GAME WHEN ESCAPE IS PRESSED. DO-NOT-DELETE
-	    Input input = gc.getInput();
+	    
 	    if(input.isKeyPressed(Input.KEY_ESCAPE)) {
 	        System.exit(0);
 	        Log.debug("Game terminated due to ESC being pressed!");
@@ -46,14 +58,12 @@ public class SimpleSlickGame extends BasicGame {
 	}
 
 	public void render(GameContainer gc, Graphics g) throws SlickException 	{
-	    
+	       
 	    player.createPlayer(g);
-	        		
+	            		
 	}
 	
 	public static void main(String[] args) {
-	    
-		System.out.println(getScreenWorkingWidth()/2);
 		try {
 			AppGameContainer appgc;
 
@@ -64,7 +74,7 @@ public class SimpleSlickGame extends BasicGame {
 		} catch (SlickException ex) {
 			Logger.getLogger(SimpleSlickGame.class.getName()).log(Level.SEVERE, null, ex);
 		}
-
+		
 	}
 	
 	/**
@@ -72,9 +82,8 @@ public class SimpleSlickGame extends BasicGame {
 	 * 
 	 * @return width of screen in pixel
 	 */
-	public static int getScreenWorkingWidth() {                                                                 //Get screen width
-	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width;
-	    
+	public static int getScreenWorkingWidth() {                                                                 
+	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width;      //Get screen width   
 	}
 	
 	/**
