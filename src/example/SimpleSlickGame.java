@@ -25,6 +25,7 @@ import org.newdawn.slick.util.Log;
 public class SimpleSlickGame extends BasicGame {
     
 	Player player = new Player();
+	Ball ball = new Ball();
     	
 	public SimpleSlickGame(String gamename) {
 		super(gamename);
@@ -60,6 +61,7 @@ public class SimpleSlickGame extends BasicGame {
 	public void render(GameContainer gc, Graphics g) throws SlickException 	{
 	       
 	    player.createPlayer(g);
+	    ball.createBall(g);
 	            		
 	}
 	

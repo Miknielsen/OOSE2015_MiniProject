@@ -10,10 +10,10 @@ public class Player {
 	public float playerLengthMultiplier = 19;
 	
     public float 
-    	playerXpos = SimpleSlickGame.getScreenWorkingWidth()/2,
-    	playerYpos = SimpleSlickGame.getScreenWorkingHeight()*0.90f,
     	playerLength = SimpleSlickGame.getScreenWorkingWidth()/playerLengthMultiplier,
-    	playerHeight = SimpleSlickGame.getScreenWorkingHeight()*0.02f; 
+    	playerHeight = SimpleSlickGame.getScreenWorkingHeight()*0.02f,
+        playerXpos = SimpleSlickGame.getScreenWorkingWidth()/2.0f-(playerLength*0.50f),
+        playerYpos = SimpleSlickGame.getScreenWorkingHeight()*0.90f; 
     
     public void createPlayer(Graphics g) {
         
@@ -33,21 +33,6 @@ public class Player {
             playerXpos -= playerLength;
     }
     
-    /*
-       
-    public void movement(GameContainer key) {
-        
-        Input keyInput = key.getInput();                                  							   //Save the input passed from the method as keyInput
-        
-        if(keyInput.isKeyPressed(Input.KEY_D)) {       
-            playerXpos += 10;
-        }
-        
-        if(keyInput.isKeyPressed(Input.KEY_A)) {       
-            playerXpos -= 10;
-        }
-        
-    }*/
     
     /**
      * Returns a float
