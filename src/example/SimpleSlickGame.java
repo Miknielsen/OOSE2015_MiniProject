@@ -23,6 +23,8 @@ import org.newdawn.slick.util.Log;
 
 
 public class SimpleSlickGame extends BasicGame {
+    
+	Player player = new Player();
     	
 	public SimpleSlickGame(String gamename) {
 		super(gamename);
@@ -44,9 +46,9 @@ public class SimpleSlickGame extends BasicGame {
 	}
 
 	public void render(GameContainer gc, Graphics g) throws SlickException 	{
-		g.drawRect(0,610,40,10);                                                           //Draws a rectangle (pos,pos,size,size)
-
-		g.drawRect(GetScreenWorkingWidth()/2,610,40,10);                                  //Draws a rectangle (pos,pos,size,size)
+	    
+	    player.createPlayer(g);
+	        		
 	}
 	
 	public static void main(String[] args) {

@@ -1,6 +1,7 @@
 package example;
 
 import org.newdawn.slick.GameContainer;
+import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.util.Log;
 
@@ -27,11 +28,9 @@ public class Player {
             return -1;
     }
     
-    public void CreatePlayer() {
+    public void createPlayer(Graphics g) {
         
-        //Create player - Rectangle
-        
-        //Fixiate player on the y-axis
+        g.drawRect(SimpleSlickGame.GetScreenWorkingWidth()/2,610,40,10);                                  //Draws a rectangle (pos,pos,size,size)
         
     }
        
