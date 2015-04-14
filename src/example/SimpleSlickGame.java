@@ -53,12 +53,12 @@ public class SimpleSlickGame extends BasicGame {
 	
 	public static void main(String[] args) {
 	    
-		System.out.println(GetScreenWorkingWidth()/2);
+		System.out.println(getScreenWorkingWidth()/2);
 		try {
 			AppGameContainer appgc;
 
 			appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                   //Name of the game
-			appgc.setDisplayMode(GetScreenWorkingWidth(), GetScreenWorkingHeight(), false);  //Fit window to screen size
+			appgc.setDisplayMode(getScreenWorkingWidth(), getScreenWorkingHeight(), false);  //Fit window to screen size
 
 			appgc.start();
 		} catch (SlickException ex) {
@@ -72,7 +72,7 @@ public class SimpleSlickGame extends BasicGame {
 	 * 
 	 * @return width of screen in pixel
 	 */
-	public static int GetScreenWorkingWidth() {                                                                 //Get screen width
+	public static int getScreenWorkingWidth() {                                                                 //Get screen width
 	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width;
 	    
 	}
@@ -82,7 +82,7 @@ public class SimpleSlickGame extends BasicGame {
 	 * 
 	 * @return height of screen in pixel
 	 */
-	public static int GetScreenWorkingHeight() {
+	public static int getScreenWorkingHeight() {
 	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().height;     //Get screen height
 	}
 	
