@@ -29,7 +29,7 @@ public class Player {
         
     }
        
-    public void Movement(GameContainer key) {
+    public void Movement(Input key) {
         
         Input keyInput = key.getInput();                                   //Save the input passed from the method as keyInput
         
