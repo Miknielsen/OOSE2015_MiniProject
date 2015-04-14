@@ -30,6 +30,8 @@ public class Player {
     }
        
     public void Movement(GameContainer key) {
+    	
+    	//Testtesttest
         
         Input keyInput = key.getInput();                                   //Save the input passed from the method as keyInput
         
