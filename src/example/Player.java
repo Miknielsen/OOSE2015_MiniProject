@@ -25,34 +25,31 @@ public class Player {
     
     public void moveRight() {
         if(playerXpos < SimpleSlickGame.getScreenWorkingWidth())
-            playerXpos += playerLength;
+            playerXpos += (playerLength/2);
         
         System.out.println(playerXpos);
     }
     
     public void moveLeft() {
         if(playerXpos > 0)
-            playerXpos -= playerLength;
+            playerXpos -= (playerLength/2);
     }
     
     
-    /**
-     * Returns a float
-     * 
-     * @param varName name of the float you want
-     * @return the value of the 
-     */
-    public float getFloat(String varName) {        
-        if (varName.equals(playerXpos))
-            return playerXpos;
-        else if (varName.equals(playerYpos))
-            return playerYpos;
-        else if (varName.equals(playerLength))
-            return playerLength;
-        else if (varName.equals(playerHeight))
-            return playerHeight;
-        else
-            return -1;
+    public float getHeight() {
+    	return playerHeight;
+    }
+    
+    public float getLength() {
+    	return playerLength;
+    }
+        
+    public float getXpos() {
+    	return playerXpos;
+    }
+    
+    public float getYpos() {
+    	return playerYpos;
     }
     
 }
