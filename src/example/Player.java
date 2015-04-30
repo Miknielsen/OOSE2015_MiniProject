@@ -21,6 +21,8 @@ public class Player {
         
     }
     
+     	 
+    
     public void moveRight() {
         if(playerXpos < SimpleSlickGame.getScreenWorkingWidth())
             playerXpos += playerLength;
