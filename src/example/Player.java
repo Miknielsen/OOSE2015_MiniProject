@@ -4,13 +4,12 @@ import org.newdawn.slick.Graphics;
 
 public class Player {
     
-	public float playerLengthMultiplier = 19;
-	
-    public float 
-    	playerLength = SimpleSlickGame.getScreenWidth()/playerLengthMultiplier,
-    	playerHeight = SimpleSlickGame.getScreenHeight()*0.02f,
-        playerXpos = SimpleSlickGame.getScreenWidth()/2.0f-(playerLength*0.50f),
-        playerYpos = SimpleSlickGame.getScreenHeight()*0.90f; 
+	private float playerLengthMultiplier = 19;
+	 
+	private float playerLength = SimpleSlickGame.getScreenWidth()/playerLengthMultiplier;
+	private float playerHeight = SimpleSlickGame.getScreenHeight()*0.02f;
+	private float playerXpos = SimpleSlickGame.getScreenWidth()/2.0f-(playerLength*0.50f);
+	private float playerYpos = SimpleSlickGame.getScreenHeight()*0.90f; 
     
     public void createPlayer(Graphics g) {
         

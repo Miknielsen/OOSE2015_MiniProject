@@ -4,12 +4,10 @@ import org.newdawn.slick.Graphics;
 
 public class Brick {	
 	
-	public float 
-	
-		brickLength = 55,			//length of created bricks
-		brickHeight = 15,			//height of bricks
-        brickXpos,					//X-position, value set to null.
-        brickYpos; 					//Y-position, value set to null.
+	private float brickLength = 55;			//length of created bricks
+	private float brickHeight = 15;			//height of bricks
+	private float brickXpos;				//X-position, value set to null.
+	private float brickYpos; 				//Y-position, value set to null.
     
 public void createBrick(Graphics g, int brickXpos, int brickYpos) {
         
