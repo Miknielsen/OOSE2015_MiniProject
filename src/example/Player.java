@@ -1,19 +1,16 @@
 package example;
 
-import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Input;
-import org.newdawn.slick.util.Log;
 
 public class Player {
     
 	public float playerLengthMultiplier = 19;
 	
     public float 
-    	playerLength = SimpleSlickGame.getScreenWorkingWidth()/playerLengthMultiplier,
-    	playerHeight = SimpleSlickGame.getScreenWorkingHeight()*0.02f,
-        playerXpos = SimpleSlickGame.getScreenWorkingWidth()/2.0f-(playerLength*0.50f),
-        playerYpos = SimpleSlickGame.getScreenWorkingHeight()*0.90f; 
+    	playerLength = SimpleSlickGame.getScreenWidth()/playerLengthMultiplier,
+    	playerHeight = SimpleSlickGame.getScreenHeight()*0.02f,
+        playerXpos = SimpleSlickGame.getScreenWidth()/2.0f-(playerLength*0.50f),
+        playerYpos = SimpleSlickGame.getScreenHeight()*0.90f; 
     
     public void createPlayer(Graphics g) {
         
@@ -24,7 +21,7 @@ public class Player {
      	 
     
     public void moveRight() {
-        if(playerXpos < SimpleSlickGame.getScreenWorkingWidth())
+        if(playerXpos < SimpleSlickGame.getScreenWidth())
             playerXpos += (playerLength/2);
         
         System.out.println(playerXpos);
