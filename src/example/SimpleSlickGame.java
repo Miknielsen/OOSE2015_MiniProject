@@ -11,6 +11,7 @@
 
 package example;
 
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,12 +26,13 @@ import org.newdawn.slick.util.Log;
 
 public class SimpleSlickGame extends BasicGame {
     
-	Brick brick = new Brick();									//Fucking push your shit Mads
+	Brick brick = new Brick();									
 	Player player = new Player();
 	Ball ball = new Ball();
     	
     float x1 = 50;
     float y1 = 50;
+    
     
     
 	public SimpleSlickGame(String gamename) {
@@ -86,6 +88,7 @@ public class SimpleSlickGame extends BasicGame {
 		for (int i = 0; i<21; i++) {
 			for (int j = 0; j < 17; j++) {
 				brick.createBrick(g, 5+(i*65), 10+(j*25));			//create brick in a grid of 21x17
+				
 			}
 		}
 		 	

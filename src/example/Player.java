@@ -14,10 +14,9 @@ public class Player {
     public void createPlayer(Graphics g) {
         
         g.drawRect(playerXpos,playerYpos, playerLength,playerHeight);                                  //Draws a rectangle (pos,pos,size,size)
-        
+         
     }
     
-     	 
     
     public void moveRight() {
         if(playerXpos < SimpleSlickGame.getScreenWidth())
