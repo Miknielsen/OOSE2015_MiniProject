@@ -31,7 +31,6 @@ public class SimpleSlickGame extends BasicGame {
     Ball ball = new Ball();
     
     
-    
     public SimpleSlickGame(String gamename) {
         super(gamename);    
     }
@@ -125,6 +124,14 @@ public class SimpleSlickGame extends BasicGame {
         return 720;     
     }
     
+    /**
+     * Sets the score
+     * 
+     * @param toScore	An integer that is added to the current score.
+     */
+    public void setScore(int toScore) {
+    	score = score + toScore;
+    }
     
     public void gameOverText(GameContainer gc, Graphics g, int score)  {     
         
