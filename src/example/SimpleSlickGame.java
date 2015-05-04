@@ -80,9 +80,9 @@ public class SimpleSlickGame extends BasicGame {
             ball.changeYdirection();
         } else if (ball.getYcoord() > player.getYpos() + player.getHeight()) {
             //TODO Show game over splash screen here
-           // ball.stopBall();
+            ball.stopBall();
             System.out.println("Game over!");
-            //gameOverText(gc, g, 10);
+            gameOverText(gc, g, 10);
         }
         
         for (int i = 0; i<21; i++) {
