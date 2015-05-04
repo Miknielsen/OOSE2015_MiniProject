@@ -17,6 +17,14 @@ public class Brick {
             g_yPos = yPos;
     }
     
+    public void setXpos(int pos) {
+    	g_xPos = pos;
+    }
+    
+    public void setYpos(int pos) {
+    	g_yPos = pos;
+    }
+    
     public int getXpos() {
     	return g_xPos;
     }
