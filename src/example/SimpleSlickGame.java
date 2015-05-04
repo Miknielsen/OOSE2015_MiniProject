@@ -90,11 +90,8 @@ public class SimpleSlickGame extends BasicGame {
             for (int j = 0; j < 10; j++) {
             	brick[i][j] = new Brick(g, 5+(i*65), 10+(j*25), 55, 15);
 
-       
-
             }
         }
-           
     }
    
     public static void main(String[] args) {

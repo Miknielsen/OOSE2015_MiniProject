@@ -1,12 +1,6 @@
 
 package example;
 
-import java.util.Random;
-
-import org.newdawn.slick.Graphics;
-
-import java.util.Random;
- 
 import org.newdawn.slick.Graphics;
  
 public class Brick {
