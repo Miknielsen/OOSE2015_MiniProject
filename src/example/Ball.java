@@ -4,9 +4,8 @@ import org.newdawn.slick.Graphics;
 
 public class Ball {
 	
-	
 	private float speedX = 1;
-	private float speedY = 1;
+	private float speedY = -1;
 	private float coordX = SimpleSlickGame.getScreenWidth() * 0.5f;
 	private float coordY = SimpleSlickGame.getScreenHeight() * 0.85f;
 	private float ballWidth = 15;
@@ -20,7 +19,6 @@ public class Ball {
 	public void createBall(Graphics g) {
 		g.drawOval(coordX, coordY, ballWidth, ballHeight);
 	}
-	
 	
 	/**
 	 * Updates the position of the ball every frame it is called
@@ -60,9 +58,24 @@ public class Ball {
 		speedY = speedY * -1;
 	}
 	
+	/**
+	 * Stops the ball from moving when called
+	 */
 	public void stopBall() {
 		speedX = 0.0f;
 		speedY = 0.0f;
+	}
+	
+	/**
+	 * Resets the ball to its starting position and the speed to 1
+	 */
+	public void resetBall() {
+		speedX = 1;
+		speedY = -1;
+		coordX = SimpleSlickGame.getScreenWidth() * 0.5f;
+		coordY = SimpleSlickGame.getScreenHeight() * 0.85f;
+		ballWidth = 15;
+		ballHeight = 15;
 	}
 	
 }
