@@ -45,7 +45,7 @@ public class SimpleSlickGame extends BasicGame {
                 
         Input input = gc.getInput();
         
-        if(player.getXpos() < getScreenWidth()-50 - player.getLength()/2 && input.isKeyPressed(Input.KEY_D)) {
+        if(player.getXpos() < getScreenWidth()-50 - player.getLength()/2 && input.isKeyDown(Input.KEY_D)) {
             player.moveRight();
             Log.debug("Player moved right");
         }
@@ -90,6 +90,21 @@ public class SimpleSlickGame extends BasicGame {
                 brick.createBrick(g, 5+(i*65), 10+(j*25));          //create brick in a grid of 21x17
                 
             }
+        }
+        
+        int[][] test = new int[10][10];
+        test[1][1] = 100;
+        test[1][2] = 100;
+        g.drawRect(test[1][1], test[1][2], 100, 100);
+        
+        Input input = gc.getInput();
+        
+        if(input.isKeyDown(Input.KEY_SPACE)) {
+            test[1][1] = 300;
+            test[1][2] = 300;
+            g.drawRect(test[1][1], test[1][2], 100, 100);
+            
+            Log.debug("Player moved right");
         }
             
     }
