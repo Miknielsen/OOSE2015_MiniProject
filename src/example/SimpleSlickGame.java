@@ -29,6 +29,9 @@ public class SimpleSlickGame extends BasicGame {
     Brick brick[][] = new Brick[10][10];                                  
     Player player = new Player();
     Ball ball = new Ball();
+    
+    private int matrixX = 1;
+    private int matrixY = 1;
    
     private int score = 0;
    
@@ -83,15 +86,29 @@ public class SimpleSlickGame extends BasicGame {
             ball.stopBall();
             System.out.println("Game over!");
             gameOverText(gc, g, score);
+            
         }
-
+        
         //Creates a 10x10 matrix of bricks
-        for (int i = 0; i<10; i++) {
-            for (int j = 0; j < 10; j++) {
-            	brick[i][j] = new Brick(g, 5+(i*65), 10+(j*25), 55, 15);
-
+        for (int i = 0; i<matrixY; i++) {
+            for (int j = 0; j < matrixX; j++) {
+            	brick[i][j] = new Brick(g, 5+(i*65), 10+(j*25));
             }
         }
+        
+        for (int i = 0; i<matrixY; i++) {
+            for (int j = 0; j < matrixX; j++) {
+            	if(ball.getXcoord() > brick[i][j].getXpos() && ball.getXcoord() < brick[i][j].getXpos() + brick[i][j].getLength()) {
+            		ball.changeYdirection();
+            		System.out.println("Bund");
+            	} else if(ball.getYcoord() > brick[i][j].getYpos() && ball.getYcoord() < brick[i][j].getYpos() + brick[i][j].getHeight()) {
+            		ball.changeXdirection();
+            		System.out.println("Side");
+        		}
+            	
+            }
+        }
+        	
     }
    
     public static void main(String[] args) {
