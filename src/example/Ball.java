@@ -6,7 +6,7 @@ public class Ball {
 	
 	
 	private float speedX = 1;
-	private float speedY = -1;
+	private float speedY = 1;
 	private float coordX = SimpleSlickGame.getScreenWidth() * 0.5f;
 	private float coordY = SimpleSlickGame.getScreenHeight() * 0.85f;
 	private float ballWidth = 15;
@@ -58,6 +58,11 @@ public class Ball {
 	 */
 	public void changeYdirection() {
 		speedY = speedY * -1;
+	}
+	
+	public void stopBall() {
+		speedX = 0.0f;
+		speedY = 0.0f;
 	}
 	
 }

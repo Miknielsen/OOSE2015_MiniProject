@@ -74,7 +74,7 @@ public class SimpleSlickGame extends BasicGame {
 	    
 	    if(ball.getYcoord() > player.getYpos() - (player.getHeight()/2) &&
 	    		ball.getXcoord() > (player.getXpos()) && 
-	    		ball.getXcoord() < (player.getXpos() + player.getLength())){
+	    		ball.getXcoord() < (player.getXpos() + player.getLength())) {
 	    	ball.changeYdirection();
 	    } else if (ball.getXcoord() == 0 || ball.getXcoord() > getScreenWidth()) {
 	    	ball.changeXdirection();
@@ -82,6 +82,7 @@ public class SimpleSlickGame extends BasicGame {
 			ball.changeYdirection();
 		} else if (ball.getYcoord() > player.getYpos() + player.getHeight()) {
 			//TODO Show game over splash screen here
+			ball.stopBall();
 			System.out.println("Game over!");
 		}
 	    
@@ -114,7 +115,7 @@ public class SimpleSlickGame extends BasicGame {
 	 * @return width of screen in pixel
 	 */
 	public static int getScreenWidth() {                                                                 
-	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width;      //Get screen width   
+	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width - 50;      //Get screen width   
 	}
 	
 	/**
@@ -123,7 +124,7 @@ public class SimpleSlickGame extends BasicGame {
 	 * @return height of screen in pixel
 	 */
 	public static int getScreenHeight() {
-	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().height;     //Get screen height
+	    return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().height - 50;     //Get screen height
 	}
 	
 }
