@@ -17,12 +17,12 @@ public class Player {
     
     public void moveRight() {
         if(playerXpos < SimpleSlickGame.getScreenWidth())
-            playerXpos += (playerLength/2);
+            playerXpos += 3;
     }
     
     public void moveLeft() {
         if(playerXpos > 0)
-            playerXpos -= (playerLength/2);
+            playerXpos -= 3;
     }
     
     public float getHeight() {
