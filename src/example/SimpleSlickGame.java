@@ -47,7 +47,7 @@ public class SimpleSlickGame extends BasicGame {
 			    
 	    Input input = gc.getInput();
 	    
-        if(input.isKeyPressed(Input.KEY_D)) {
+        if(input.isKeyDown(Input.KEY_D)) {
             player.moveRight();
             Log.debug("Player moved right");
         }
