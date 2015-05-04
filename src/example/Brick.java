@@ -14,13 +14,6 @@ public class Brick {
 	int lives = RandomGen.randInt(1, 3);
 	
 	public void createBrick(Graphics g, int brickXpos, int brickYpos) {
-        g.drawRect(brickXpos,brickYpos, brickLength,brickHeight);
+        g.drawRect(brickXpos,brickYpos, brickLength,brickHeight);        
     }
-		
-	
-	
-	
-
-	
-
 }
