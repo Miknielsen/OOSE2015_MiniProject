@@ -11,6 +11,8 @@ public class Player {
 	private float playerXpos = SimpleSlickGame.getScreenWidth()/2.0f-(playerLength*0.50f);
 	private float playerYpos = SimpleSlickGame.getScreenHeight()*0.90f; 
     
+	private int playerLife = 3;
+	
     public void createPlayer(Graphics g) {
         g.drawRect(playerXpos,playerYpos, playerLength,playerHeight);                                  //Draws a rectangle (pos,pos,size,size)
     }
@@ -49,4 +51,11 @@ public class Player {
     	playerYpos = SimpleSlickGame.getScreenHeight()*0.90f; 
     }
     
+    public void playerLife(){
+        playerLife--;
+        System.out.println(playerLife);
+        if(playerLife==0){
+            
+        }   
+    }
 }

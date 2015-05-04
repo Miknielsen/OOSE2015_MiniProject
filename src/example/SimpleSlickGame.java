@@ -32,7 +32,6 @@ public class SimpleSlickGame extends BasicGame {
    
     private int score = 0;
    
-   
     public SimpleSlickGame(String gamename) {
         super(gamename);    
     }
@@ -83,6 +82,7 @@ public class SimpleSlickGame extends BasicGame {
             ball.stopBall();
             System.out.println("Game over!");
             gameOverText(gc, g, score);
+            player.playerLife();
         }
 
         //Creates a 10x10 matrix of bricks
