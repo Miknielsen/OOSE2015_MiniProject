@@ -31,7 +31,6 @@ public class SimpleSlickGame extends BasicGame {
     Player player = new Player();
     Ball ball = new Ball();
     
-    private boolean isGameOverScreenShowing = false;
     
     
     public SimpleSlickGame(String gamename) {
@@ -83,17 +82,7 @@ public class SimpleSlickGame extends BasicGame {
             //TODO Show game over splash screen here
             ball.stopBall();
             System.out.println("Game over!");
-            isGameOverScreenShowing = true;
             gameOverText(gc, g, 10);
-        }
-        
-        Input input = gc.getInput();
-        if(isGameOverScreenShowing && input.isKeyPressed(Input.KEY_RETURN)) {
-        	ball.resetBall();
-        	player.resetPlayer();
-        	player.createPlayer(g);
-        	ball.createBall(g);
-        	isGameOverScreenShowing = false;
         }
         
         for (int i = 0; i<21; i++) {
@@ -138,8 +127,9 @@ public class SimpleSlickGame extends BasicGame {
     }
     
     
-    public void gameOverText(GameContainer gc, Graphics g, int score)  {
-    	int x = 0;
+    public void gameOverText(GameContainer gc, Graphics g, int score)  {     
+        
+        int x = 0;
         int y = 0;
         float boxLength = SimpleSlickGame.getScreenWidth();                                //Gets screen width
         float boxHeight = SimpleSlickGame.getScreenHeight();                               //Gets screen height
