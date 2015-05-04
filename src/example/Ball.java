@@ -60,6 +60,14 @@ public class Ball {
 		speedY = speedY * -1;
 	}
 	
+	public float getXspeed(){
+		return speedX;
+	}
+	
+	public float getYspeed() {
+		return speedY;
+	}
+	
 	public void stopBall() {
 		speedX = 0.0f;
 		speedY = 0.0f;

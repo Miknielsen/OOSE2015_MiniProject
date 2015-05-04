@@ -30,7 +30,7 @@ public class SimpleSlickGame extends BasicGame {
     Player player = new Player();
     Ball ball = new Ball();
     
-    private int matrixX = 1;
+    private int matrixX = 10;
     private int matrixY = 10;
    
     private int score = 0;
@@ -93,19 +93,6 @@ public class SimpleSlickGame extends BasicGame {
         for (int i = 0; i<matrixY; i++) {
             for (int j = 0; j < matrixX; j++) {
             	brick[i][j] = new Brick(g, 5+(i*65), 10+(j*25));
-            }
-        }
-        
-        for (int i = 0; i<matrixY; i++) {
-            for (int j = 0; j < matrixX; j++) {
-            	if(ball.getXcoord() > brick[i][j].getXpos() && ball.getXcoord() < brick[i][j].getXpos() + brick[i][j].getLength()) {
-            		ball.changeYdirection();
-            		System.out.println("Bund");
-            	} else if(ball.getYcoord() > brick[i][j].getYpos() && ball.getYcoord() < brick[i][j].getYpos() + brick[i][j].getHeight()) {
-            		ball.changeXdirection();
-            		System.out.println("Side");
-        		}
-            	
             }
         }
         	
