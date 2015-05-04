@@ -30,6 +30,8 @@ public class SimpleSlickGame extends BasicGame {
     Player player = new Player();
     Ball ball = new Ball();
     
+    private int score = 0;
+    
     
     public SimpleSlickGame(String gamename) {
         super(gamename);    
