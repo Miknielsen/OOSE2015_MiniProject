@@ -85,7 +85,7 @@ public class SimpleSlickGame extends BasicGame {
             gameOverText(gc, g, score);
         }
 
-        
+        //Creates a 10x10 matrix of bricks
         for (int i = 0; i<10; i++) {
             for (int j = 0; j < 10; j++) {
             	brick[i][j] = new Brick(g, 5+(i*65), 10+(j*25), 55, 15);
