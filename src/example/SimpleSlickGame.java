@@ -74,9 +74,9 @@ public class SimpleSlickGame extends BasicGame {
                 ball.getXcoord() > (player.getXpos()) &&
                 ball.getXcoord() < (player.getXpos() + player.getLength())) {
             ball.changeYdirection();
-        } else if (ball.getXcoord() == 0.0f || ball.getXcoord() > getScreenWidth() - 10.0f) {
+        } else if (ball.getXcoord() == 0 || ball.getXcoord() > getScreenWidth() - 10) {
             ball.changeXdirection();
-        } else if (ball.getYcoord() == getScreenHeight()-10.0f || ball.getYcoord() == 0.0f) {
+        } else if (ball.getYcoord() == getScreenHeight()-10 || ball.getYcoord() == 0) {
             ball.changeYdirection();
         } else if (ball.getYcoord() > player.getYpos() + player.getHeight()) {
             //TODO Show game over splash screen here
@@ -85,7 +85,7 @@ public class SimpleSlickGame extends BasicGame {
             gameOverText(gc, g, score);
         }
 
-        
+        //Creates a 10x10 matrix of bricks
         for (int i = 0; i<10; i++) {
             for (int j = 0; j < 10; j++) {
             	brick[i][j] = new Brick(g, 5+(i*65), 10+(j*25), 55, 15);
