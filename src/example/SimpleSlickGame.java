@@ -31,7 +31,7 @@ public class SimpleSlickGame extends BasicGame {
     Ball ball = new Ball();
     
     private int matrixX = 1;
-    private int matrixY = 1;
+    private int matrixY = 10;
    
     private int score = 0;
    
@@ -77,9 +77,9 @@ public class SimpleSlickGame extends BasicGame {
                 ball.getXcoord() > (player.getXpos()) &&
                 ball.getXcoord() < (player.getXpos() + player.getLength())) {
             ball.changeYdirection();
-        } else if (ball.getXcoord() == 0.0f || ball.getXcoord() > getScreenWidth() - 10.0f) {
+        } else if (ball.getXcoord() <= 0.0f || ball.getXcoord() > getScreenWidth() - 10.0f) {
             ball.changeXdirection();
-        } else if (ball.getYcoord() == getScreenHeight()-10.0f || ball.getYcoord() == 0.0f) {
+        } else if (ball.getYcoord() == getScreenHeight()-10.0f || ball.getYcoord() <= 0.0f) {
             ball.changeYdirection();
         } else if (ball.getYcoord() > player.getYpos() + player.getHeight()) {
             //TODO Show game over splash screen here
