@@ -32,6 +32,11 @@ public class SimpleSlickGame extends BasicGame {
     
     private int score = 0;
     
+    private int brickX = 11;
+    private int brickY = 10;
+    int [][] mapX = new int [brickX][brickY];
+    int [][] mapY = new int [brickX][brickY];
+    
     
     public SimpleSlickGame(String gamename) {
         super(gamename);    
@@ -82,12 +87,21 @@ public class SimpleSlickGame extends BasicGame {
             //TODO Show game over splash screen here
             ball.stopBall();
             System.out.println("Game over!");
-            gameOverText(gc, g, 10);
+            gameOverText(gc, g, score);
         }
         
         for (int i = 0; i<21; i++) {
             for (int j = 0; j < 17; j++) {
                 brick.createBrick(g, 5+(i*65), 10+(j*25));          //create brick in a grid of 21x17
+                
+            }
+        }
+        
+        for (int y = 0; y<brickY; y++){
+            for (int x = 0; x<brickX; x++){
+                mapX[x][y] = x*10;
+                mapY[x][y] = y*10;
+                
                 
             }
         }
