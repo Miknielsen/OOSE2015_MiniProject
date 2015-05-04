@@ -1,56 +1,50 @@
 package example;
 
-import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
-import org.newdawn.slick.Input;
-import org.newdawn.slick.util.Log;
 
 public class Player {
     
-	public float playerLengthMultiplier = 19;
-	
-    public float 
-    	playerLength = SimpleSlickGame.getScreenWorkingWidth()/playerLengthMultiplier,
-    	playerHeight = SimpleSlickGame.getScreenWorkingHeight()*0.02f,
-        playerXpos = SimpleSlickGame.getScreenWorkingWidth()/2.0f-(playerLength*0.50f),
-        playerYpos = SimpleSlickGame.getScreenWorkingHeight()*0.90f; 
+	private float playerLengthMultiplier = 19;
+	 
+	private float playerLength = SimpleSlickGame.getScreenWidth()/playerLengthMultiplier;
+	private float playerHeight = SimpleSlickGame.getScreenHeight()*0.02f;
+	private float playerXpos = SimpleSlickGame.getScreenWidth()/2.0f-(playerLength*0.50f);
+	private float playerYpos = SimpleSlickGame.getScreenHeight()*0.90f; 
     
     public void createPlayer(Graphics g) {
         
         g.drawRect(playerXpos,playerYpos, playerLength,playerHeight);                                  //Draws a rectangle (pos,pos,size,size)
-        
+         
     }
     
+    
     public void moveRight() {
-        if(playerXpos < SimpleSlickGame.getScreenWorkingWidth())
-            playerXpos += playerLength;
+        if(playerXpos < SimpleSlickGame.getScreenWidth())
+            playerXpos += (playerLength/2);
         
         System.out.println(playerXpos);
     }
     
     public void moveLeft() {
         if(playerXpos > 0)
-            playerXpos -= playerLength;
+            playerXpos -= (playerLength/2);
     }
     
     
-    /**
-     * Returns a float
-     * 
-     * @param varName name of the float you want
-     * @return the value of the 
-     */
-    public float getFloat(String varName) {        
-        if (varName.equals(playerXpos))
-            return playerXpos;
-        else if (varName.equals(playerYpos))
-            return playerYpos;
-        else if (varName.equals(playerLength))
-            return playerLength;
-        else if (varName.equals(playerHeight))
-            return playerHeight;
-        else
-            return -1;
+    public float getHeight() {
+    	return playerHeight;
+    }
+    
+    public float getLength() {
+    	return playerLength;
+    }
+        
+    public float getXpos() {
+    	return playerXpos;
+    }
+    
+    public float getYpos() {
+    	return playerYpos;
     }
     
 }
