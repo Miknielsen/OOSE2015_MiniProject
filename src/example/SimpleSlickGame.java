@@ -82,7 +82,7 @@ public class SimpleSlickGame extends BasicGame {
             //TODO Show game over splash screen here
             ball.stopBall();
             System.out.println("Game over!");
-            gameOverText(gc, g, 10);
+            gameOverText(gc, g, score);
         }
 
         
@@ -143,10 +143,10 @@ public class SimpleSlickGame extends BasicGame {
         float boxLength = SimpleSlickGame.getScreenWidth();                                //Gets screen width
         float boxHeight = SimpleSlickGame.getScreenHeight();                               //Gets screen height
         String endText = ("Game over! Your score was " +score);                                         //STILL NEEDS A SCORE TO PRINT OUT
-        float textPosX = SimpleSlickGame.getScreenWidth()*0.40f;
+        float textPosX = SimpleSlickGame.getScreenWidth()*0.31f;
         float textPosY = SimpleSlickGame.getScreenHeight()*0.50f;
        
-        g.setColor(Color.blue);
+        g.setColor(Color.cyan);
         g.fillRect(x, y, boxLength, boxHeight);
         g.drawRect(x, y, boxLength, boxHeight);
         g.setColor(Color.black);
