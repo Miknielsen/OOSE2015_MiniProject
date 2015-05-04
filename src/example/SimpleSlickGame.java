@@ -26,7 +26,7 @@ import org.newdawn.slick.util.Log;
 
 public class SimpleSlickGame extends BasicGame {
     
-    Brick brick = new Brick();                                  
+    Brick brick[][] = new Brick[10][10];                                  
     Player player = new Player();
     Ball ball = new Ball();
     
@@ -85,10 +85,9 @@ public class SimpleSlickGame extends BasicGame {
             gameOverText(gc, g, 10);
         }
         
-        for (int i = 0; i<21; i++) {
-            for (int j = 0; j < 17; j++) {
-                brick.createBrick(g, 5+(i*65), 10+(j*25));          //create brick in a grid of 21x17
-                
+        for (int i = 0; i<10; i++) {
+            for (int j = 0; j < 10; j++) {
+            	brick[i][j] = new Brick(g, 5+(i*65), 10+(j*25), 55, 15);
             }
         }
             
