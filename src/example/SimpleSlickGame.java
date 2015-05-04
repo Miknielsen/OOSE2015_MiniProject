@@ -45,12 +45,12 @@ public class SimpleSlickGame extends BasicGame {
                 
         Input input = gc.getInput();
         
-        if(player.getXpos() < getScreenWidth()-50 - player.getLength()/2 && input.isKeyPressed(Input.KEY_D)) {
+        if(player.getXpos() < getScreenWidth()-50 - player.getLength()/2 && input.isKeyDown(Input.KEY_D)) {
             player.moveRight();
             Log.debug("Player moved right");
         }
         
-        if(player.getXpos() + player.getLength() > 100 && input.isKeyPressed(Input.KEY_A)) {
+        if(player.getXpos() + player.getLength() > 100 && input.isKeyDown(Input.KEY_A)) {
             player.moveLeft();
             Log.debug("Player moved left");
         }
