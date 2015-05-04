@@ -45,12 +45,12 @@ public class SimpleSlickGame extends BasicGame {
                 
         Input input = gc.getInput();
         
-        if(input.isKeyPressed(Input.KEY_D)) {
+        if(player.getXpos() < getScreenWidth()-50 - player.getLength()/2 && input.isKeyPressed(Input.KEY_D)) {
             player.moveRight();
             Log.debug("Player moved right");
         }
         
-        if(input.isKeyPressed(Input.KEY_A)) {
+        if(player.getXpos() + player.getLength() > 100 && input.isKeyPressed(Input.KEY_A)) {
             player.moveLeft();
             Log.debug("Player moved left");
         }
@@ -74,15 +74,15 @@ public class SimpleSlickGame extends BasicGame {
                 ball.getXcoord() > (player.getXpos()) && 
                 ball.getXcoord() < (player.getXpos() + player.getLength())) {
             ball.changeYdirection();
-        } else if (ball.getXcoord() == 0 || ball.getXcoord() > getScreenWidth()) {
+        } else if (ball.getXcoord() == 0 || ball.getXcoord() > getScreenWidth() - 10) {
             ball.changeXdirection();
-        } else if (ball.getYcoord() == getScreenHeight() || ball.getYcoord() == 0) {
+        } else if (ball.getYcoord() == getScreenHeight()-10 || ball.getYcoord() == 0) {
             ball.changeYdirection();
         } else if (ball.getYcoord() > player.getYpos() + player.getHeight()) {
             //TODO Show game over splash screen here
-            ball.stopBall();
+           // ball.stopBall();
             System.out.println("Game over!");
-            gameOverText(gc, g, 10);
+            //gameOverText(gc, g, 10);
         }
         
         for (int i = 0; i<21; i++) {
