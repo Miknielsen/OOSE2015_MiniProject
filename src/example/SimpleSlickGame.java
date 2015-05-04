@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
@@ -29,9 +30,6 @@ public class SimpleSlickGame extends BasicGame {
     Brick brick = new Brick();                                  
     Player player = new Player();
     Ball ball = new Ball();
-        
-    float x1 = 50;
-    float y1 = 50;
     
     
     
@@ -84,6 +82,7 @@ public class SimpleSlickGame extends BasicGame {
             //TODO Show game over splash screen here
             ball.stopBall();
             System.out.println("Game over!");
+            gameOverText(gc, g, 10);
         }
         
         for (int i = 0; i<21; i++) {
@@ -115,7 +114,7 @@ public class SimpleSlickGame extends BasicGame {
      * @return width of screen in pixel
      */
     public static int getScreenWidth() {                                                                 
-        return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().width - 50;      //Get screen width   
+        return 1280;         
     }
     
     /**
@@ -124,7 +123,24 @@ public class SimpleSlickGame extends BasicGame {
      * @return height of screen in pixel
      */
     public static int getScreenHeight() {
-        return java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds().height - 50;     //Get screen height
+        return 720;     
     }
     
+    
+    public void gameOverText(GameContainer gc, Graphics g, int score)  {     
+        
+        int x = 0;
+        int y = 0;
+        float boxLength = SimpleSlickGame.getScreenWidth();                                //Gets screen width
+        float boxHeight = SimpleSlickGame.getScreenHeight();                               //Gets screen height
+        String endText = ("Game over! Your score was " +score);                                         //STILL NEEDS A SCORE TO PRINT OUT
+        float textPosX = SimpleSlickGame.getScreenWidth()*0.40f;
+        float textPosY = SimpleSlickGame.getScreenHeight()*0.50f;
+        
+        g.setColor(Color.blue);
+        g.fillRect(x, y, boxLength, boxHeight);
+        g.drawRect(x, y, boxLength, boxHeight);
+        g.setColor(Color.black);
+        g.drawString(endText, textPosX, textPosY);
+    }
 }
