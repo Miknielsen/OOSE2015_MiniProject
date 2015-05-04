@@ -114,6 +114,8 @@ public class SimpleSlickGame extends BasicGame {
      * @return width of the screen in pixel
      */
     public static int getScreenWidth() {                                                                
+        return 650;
+        
     }
    
     /**
