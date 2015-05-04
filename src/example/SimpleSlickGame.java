@@ -44,20 +44,12 @@ public class SimpleSlickGame extends BasicGame {
     public void update(GameContainer gc, int i) throws SlickException {
                
         Input input = gc.getInput();
-<<<<<<< HEAD
-       
-=======
-        
->>>>>>> origin/master
+
         if(player.getXpos() < getScreenWidth()-50 - player.getLength()/2 && input.isKeyDown(Input.KEY_D)) {
             player.moveRight();
             Log.debug("Player moved right");
         }
-<<<<<<< HEAD
-       
-=======
-        
->>>>>>> origin/master
+
         if(player.getXpos() + player.getLength() > 100 && input.isKeyDown(Input.KEY_A)) {
             player.moveLeft();
             Log.debug("Player moved left");
