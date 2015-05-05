@@ -203,7 +203,7 @@ public class SimpleSlickGame extends BasicGame {
      * The text is in black.
      *  
      * @param gc        Gamecontainer                                                       //TODO Find out what a gamecontainer actually is
-     * @param g         Graphics to draw objects
+     * @param g         Graphic engine to draw objects and change colors
      * @param score     The score value to be shown when the game is over
      */
     public void gameOverText(GameContainer gc, Graphics g, int score)  {

@@ -14,7 +14,7 @@ public class Player {
 	/**
 	 * Creates the player at given a position with a given size
 	 * 
-	 * @param g        Graphics used to draw the player
+	 * @param g        Graphic engine used to draw the player
 	 */
     public void createPlayer(Graphics g) {
         g.drawRect(playerXpos,playerYpos, playerLength,playerHeight);                                  //Draws a rectangle (pos,pos,size,size)
@@ -37,7 +37,7 @@ public class Player {
     }
     
     /**
-     * Find the value of the player's height
+     * Getter for the value of the player's height
      * 
      * @return      Returns the player's height in pixel
      */
@@ -46,7 +46,7 @@ public class Player {
     }
     
     /**
-     * Find the value of the player's length
+     * Getter for the value of the player's length
      * 
      * @return      Returns the player's length in pixel
      */
@@ -55,7 +55,7 @@ public class Player {
     }
     
     /**
-     * Finds the value of the player X-coordinate
+     * Getter for the value of the player X-coordinate
      * 
      * @return      Returns the X-coordinate of the player
      */
@@ -64,7 +64,7 @@ public class Player {
     }
     
     /**
-     * Finds the value of the player Y-coordinate
+     * Getter for the value of the player Y-coordinate
      * 
      * @return      Returns the Y-coordinate of the player
      */

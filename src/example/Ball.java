@@ -32,6 +32,7 @@ public class Ball {
 
 	/**
 	 * Getter for the current x-coordinate of the ball
+	 * 
 	 * @return	The x-coordinate as a float
 	 */
 	public float getXcoord() {
@@ -40,6 +41,7 @@ public class Ball {
 	
 	/**
 	 * Getter for the current y-coordinate of the ball
+	 * 
 	 * @return	The y-coordinate as a float
 	 */
 	public float getYcoord() {
@@ -60,27 +62,56 @@ public class Ball {
 		speedY = speedY * -1;
 	}
 	
+	/**
+	 * Getter for the speed of the ball on the x-axis
+	 * 
+	 * @return     Returns the speed of the ball on the x-axis
+	 */
 	public float getXspeed(){
 		return speedX;
 	}
 	
+	/**
+	 * Getter for the speed of the ball on the y-axis
+	 * 
+	 * @return     Returns the speed of the ball on the y-axis
+	 */
 	public float getYspeed() {
 		return speedY;
 	}
 	
+	/**
+	 * Setter for the x-coordinate of the ball
+	 * 
+	 * @param coord        Takes a coordinate as input and sets the x-coordinate of the ball
+	 */
 	public void setXcoord(int coord) {
 		coordX = coord;
 	}
 	
+	/**
+	 * Setter for the y-coordinate of the ball
+	 * 
+	 * @param coord        Takes a coordinate as input and sets the y-coordinate of the ball
+	 */
 	public void setYcoord(int coord) {
 		coordY = coord;
 	}
 	
+	/**
+	 * Multiplies the speed of the ball with inputted value on both
+	 * the x- and y-axis
+	 * 
+	 * @param multiplier       Takes a float as input to be multiplied with the ball speed  
+	 */
 	public void setSpeed(float multiplier) {
 		speedX *= multiplier;
 		speedY *= multiplier;
 	}
 	
+	/**
+	 * Stops the ball's movement by setting the speed on the x- and y-axis to 0
+	 */
 	public void stopBall() {
 		speedX = 0.0f;
 		speedY = 0.0f;
