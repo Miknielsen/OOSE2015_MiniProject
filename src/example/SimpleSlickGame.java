@@ -34,10 +34,9 @@ public class SimpleSlickGame extends BasicGame {
     Ball ball = new Ball();
    
     private int score = 0;
-<<<<<<< HEAD
-=======
+
     private boolean bricksCreated = false;
->>>>>>> origin/master
+
    
     public SimpleSlickGame(String gamename) {
         super(gamename);    
@@ -89,7 +88,7 @@ public class SimpleSlickGame extends BasicGame {
                 ball.getXcoord() > (player.getXpos()) &&
                 ball.getXcoord() < (player.getXpos() + player.getLength())) {
             ball.changeYdirection();
-            ball.setSpeed(1.01f);																			//Increases the speed of the ball each time it hits the player
+            ball.setSpeed(1.02f);																			//Increases the speed of the ball each time it hits the player
         } else if (ball.getXcoord() <= 0.0f || ball.getXcoord() > getScreenWidth() - 10.0f) {
             ball.changeXdirection();
         } else if (ball.getYcoord() == getScreenHeight()-10.0f || ball.getYcoord() <= 0.0f) {
