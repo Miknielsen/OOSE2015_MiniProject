@@ -68,6 +68,14 @@ public class Ball {
 		return speedY;
 	}
 	
+	public void setXcoord(int coord) {
+		coordX = coord;
+	}
+	
+	public void setYcoord(int coord) {
+		coordY = coord;
+	}
+	
 	public void setSpeed(float multiplier) {
 		speedX *= multiplier;
 		speedY *= multiplier;
