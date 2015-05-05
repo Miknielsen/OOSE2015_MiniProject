@@ -1,6 +1,5 @@
 package example;
 
-import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 
 public class Player {
@@ -52,12 +51,11 @@ public class Player {
     	playerYpos = SimpleSlickGame.getScreenHeight()*0.90f; 
     }
     
-    public void playerLife(GameContainer gc, Graphics g, int score){
+    public void playerLife(){
+        playerLife--;
         System.out.println(playerLife);
-        if(playerLife == 0){
-            SimpleSlickGame.gameOverText(gc, g, score);
-        } else {
-        	playerLife--;
-        }
+        if(playerLife==0){
+            
+        }   
     }
 }

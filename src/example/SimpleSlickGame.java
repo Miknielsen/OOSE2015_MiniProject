@@ -101,7 +101,14 @@ public class SimpleSlickGame extends BasicGame {
             ball.setYcoord(0);
             System.out.println("Game over!");
             gameOverText(gc, g, score);
-            player.playerLife(gc, g, score);
+            player.playerLife();
+            
+            int input = JOptionPane.showOptionDialog(null, "Hello World", "The title", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+
+            if(input == JOptionPane.OK_OPTION)
+            {
+                System.exit(0);
+            }
         }
         
         for (int k = 0; k<matrixY; k++) {
@@ -190,7 +197,7 @@ public class SimpleSlickGame extends BasicGame {
         score = score + toScore;
     }
    
-    public static void gameOverText(GameContainer gc, Graphics g, int score)  {
+    public void gameOverText(GameContainer gc, Graphics g, int score)  {
     	
         int x = 0;
         int y = 0;
