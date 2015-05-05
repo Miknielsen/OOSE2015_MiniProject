@@ -38,7 +38,8 @@ public class SimpleSlickGame extends BasicGame {
     private int score = 0;
 
     private boolean bricksCreated = false;
-   
+
+    
     public SimpleSlickGame(String gamename) {
         super(gamename);    
     }
@@ -196,14 +197,23 @@ public class SimpleSlickGame extends BasicGame {
         score = score + toScore;
     }
    
+    /**
+     * When the game ends, set background color to cyan and show a text
+     * telling the player that the game is over, along with the score.
+     * The text is in black.
+     *  
+     * @param gc        Gamecontainer                                                       //TODO Find out what a gamecontainer actually is
+     * @param g         Graphics to draw objects
+     * @param score     The score value to be shown when the game is over
+     */
     public void gameOverText(GameContainer gc, Graphics g, int score)  {
     	
         int x = 0;
         int y = 0;
-        float boxLength = SimpleSlickGame.getScreenWidth();                                //Gets screen width
-        float boxHeight = SimpleSlickGame.getScreenHeight();                               //Gets screen height
-        String endText = ("Game over! Your score was " + score);                           //STILL NEEDS A SCORE TO PRINT OUT
-        float textPosX = SimpleSlickGame.getScreenWidth()*0.31f;
+        float boxLength = SimpleSlickGame.getScreenWidth();                                 //Gets screen width
+        float boxHeight = SimpleSlickGame.getScreenHeight();                                //Gets screen height
+        String endText = ("Game over! Your score was " + score);                            //STILL NEEDS A SCORE TO PRINT OUT
+        float textPosX = SimpleSlickGame.getScreenWidth()*0.31f;                            //TODO consult nicolai, line above (mikkel)
         float textPosY = SimpleSlickGame.getScreenHeight()*0.50f;
        
         g.setColor(Color.cyan);

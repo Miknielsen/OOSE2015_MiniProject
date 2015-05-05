@@ -11,36 +11,70 @@ public class Player {
 	private float playerXpos = SimpleSlickGame.getScreenWidth()/2.0f-(playerLength*0.50f);
 	private float playerYpos = SimpleSlickGame.getScreenHeight()*0.90f; 
     
+	/**
+	 * Creates the player at given a position with a given size
+	 * 
+	 * @param g        Graphics used to draw the player
+	 */
     public void createPlayer(Graphics g) {
         g.drawRect(playerXpos,playerYpos, playerLength,playerHeight);                                  //Draws a rectangle (pos,pos,size,size)
     }
     
+    /**
+     * Increments player movement to the right, moving 3 pixels
+     */
     public void moveRight() {
         if(playerXpos < SimpleSlickGame.getScreenWidth())
             playerXpos += 3;
     }
     
+    /**
+     * Decreases player movement to the left, moving 3 pixels
+     */
     public void moveLeft() {
         if(playerXpos > 0)
             playerXpos -= 3;
     }
     
+    /**
+     * Find the value of the player's height
+     * 
+     * @return      Returns the player's height in pixel
+     */
     public float getHeight() {
     	return playerHeight;
     }
     
+    /**
+     * Find the value of the player's length
+     * 
+     * @return      Returns the player's length in pixel
+     */
     public float getLength() {
     	return playerLength;
     }
-        
+    
+    /**
+     * Finds the value of the player X-coordinate
+     * 
+     * @return      Returns the X-coordinate of the player
+     */
     public float getXpos() {
     	return playerXpos;
     }
     
+    /**
+     * Finds the value of the player Y-coordinate
+     * 
+     * @return      Returns the Y-coordinate of the player
+     */
     public float getYpos() {
     	return playerYpos;
     }
     
+    /**
+     * Sets the size of the player in length, height and coordinates to spawn
+     */
     public void resetPlayer() {
     	playerLengthMultiplier = 7;
     	playerLength = SimpleSlickGame.getScreenWidth()/playerLengthMultiplier;
