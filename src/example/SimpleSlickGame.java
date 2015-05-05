@@ -34,10 +34,8 @@ public class SimpleSlickGame extends BasicGame {
     Ball ball = new Ball();
    
     private int score = 0;
-<<<<<<< HEAD
-=======
+
     private boolean bricksCreated = false;
->>>>>>> origin/master
    
     public SimpleSlickGame(String gamename) {
         super(gamename);    
