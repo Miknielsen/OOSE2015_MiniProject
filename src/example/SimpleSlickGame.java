@@ -14,6 +14,11 @@ package example;
 import java.util.logging.Level;
 import java.util.logging.Logger;
  
+
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.Color;
@@ -95,9 +100,18 @@ public class SimpleSlickGame extends BasicGame {
         } else if (ball.getYcoord() > player.getYpos() + player.getHeight()) {
             //TODO Show game over splash screen here
             ball.stopBall();
+            ball.setXcoord(0);
+            ball.setYcoord(0);
             System.out.println("Game over!");
             gameOverText(gc, g, score);
             player.playerLife();
+            
+            int input = JOptionPane.showOptionDialog(null, "Hello World", "The title", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+
+            if(input == JOptionPane.OK_OPTION)
+            {
+                System.exit(0);
+            }
         }
         
         for (int k = 0; k<matrixY; k++) {
@@ -186,7 +200,7 @@ public class SimpleSlickGame extends BasicGame {
         score = score + toScore;
     }
    
-    public void gameOverText(GameContainer gc, Graphics g, int score)  {  
+    public void gameOverText(GameContainer gc, Graphics g, int score)  {
     	
         int x = 0;
         int y = 0;
