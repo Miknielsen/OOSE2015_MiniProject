@@ -101,9 +101,8 @@ public class SimpleSlickGame extends BasicGame {
             ball.setYcoord(0);
             System.out.println("Game over!");
             gameOverText(gc, g, score);
-            player.playerLife();
-            
-            int input = JOptionPane.showOptionDialog(null, "Hello World", "The title", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+
+            int input = JOptionPane.showOptionDialog(null, "You have lost the game!", "GAME OVER", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
 
             if(input == JOptionPane.OK_OPTION)
             {
