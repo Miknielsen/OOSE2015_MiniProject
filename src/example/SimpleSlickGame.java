@@ -35,8 +35,12 @@ public class SimpleSlickGame extends BasicGame {
    
     private int score = 0;
 
+<<<<<<< HEAD
     private boolean bricksCreated = false;
 
+=======
+    private boolean bricksCreated = false;
+>>>>>>> origin/master
    
     public SimpleSlickGame(String gamename) {
         super(gamename);    
@@ -187,8 +191,8 @@ public class SimpleSlickGame extends BasicGame {
         score = score + toScore;
     }
    
-    public void gameOverText(GameContainer gc, Graphics g, int score)  {    
-       
+    public void gameOverText(GameContainer gc, Graphics g, int score)  {  
+    	
         int x = 0;
         int y = 0;
         float boxLength = SimpleSlickGame.getScreenWidth();                                //Gets screen width
