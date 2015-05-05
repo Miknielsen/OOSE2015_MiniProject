@@ -5,8 +5,8 @@ import org.newdawn.slick.Graphics;
 public class Ball {
 	
 	
-	private float speedX = 1;
-	private float speedY = -1;
+	private float speedX = 1.2f;
+	private float speedY = -1.2f;
 	private float coordX = SimpleSlickGame.getScreenWidth() * 0.5f;
 	private float coordY = SimpleSlickGame.getScreenHeight() * 0.85f;
 	private float ballWidth = 15;
@@ -58,6 +58,19 @@ public class Ball {
 	 */
 	public void changeYdirection() {
 		speedY = speedY * -1;
+	}
+	
+	public float getXspeed(){
+		return speedX;
+	}
+	
+	public float getYspeed() {
+		return speedY;
+	}
+	
+	public void setSpeed(float multiplier) {
+		speedX *= multiplier;
+		speedY *= multiplier;
 	}
 	
 	public void stopBall() {

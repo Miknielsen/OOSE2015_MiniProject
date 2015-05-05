@@ -4,7 +4,7 @@ import org.newdawn.slick.Graphics;
 
 public class Player {
     
-	private float playerLengthMultiplier = 7;
+	private float playerLengthMultiplier = 1;		//TODO change back to 7, 1 is for easy debugging
 	 
 	private float playerLength = SimpleSlickGame.getScreenWidth()/playerLengthMultiplier;
 	private float playerHeight = SimpleSlickGame.getScreenHeight()*0.02f;

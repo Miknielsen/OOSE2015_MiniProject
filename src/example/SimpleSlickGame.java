@@ -25,12 +25,19 @@ import org.newdawn.slick.util.Log;
  
  
 public class SimpleSlickGame extends BasicGame {
+    
+    private int matrixX = 10;																				//Set size of X in the matrix
+    private int matrixY = 10;																				//Set size of Y in the matrix
 
-    Brick brick[][] = new Brick[10][10];                                  
+    Brick brick[][] = new Brick[matrixX+1][matrixY+1];                                  
     Player player = new Player();
     Ball ball = new Ball();
    
     private int score = 0;
+<<<<<<< HEAD
+=======
+    private boolean bricksCreated = false;
+>>>>>>> origin/master
    
     public SimpleSlickGame(String gamename) {
         super(gamename);    
@@ -44,14 +51,13 @@ public class SimpleSlickGame extends BasicGame {
                
         Input input = gc.getInput();
 
-        if(player.getXpos() < getScreenWidth()-50 - player.getLength()/2 && input.isKeyDown(Input.KEY_D)) {
+        if(player.getXpos() < getScreenWidth()-50 - player.getLength()/2 && 								
+        		input.isKeyDown(Input.KEY_D)) {																//Checks if the player is within the window
             player.moveRight();
-            Log.debug("Player moved right");
         }
 
-        if(player.getXpos() + player.getLength() > 100 && input.isKeyDown(Input.KEY_A)) {
+        if(player.getXpos() + player.getLength() > 100 && input.isKeyDown(Input.KEY_A)) {					//Checks if the player is within the window
             player.moveLeft();
-            Log.debug("Player moved left");
         }
                                
         //DEBUG - CLOSES THE GAME WHEN ESCAPE IS PRESSED. DO-NOT-DELETE
@@ -61,21 +67,32 @@ public class SimpleSlickGame extends BasicGame {
         }
        
     }
- 
+    
     public void render(GameContainer gc, Graphics g) throws SlickException  {
-           
-        player.createPlayer(g);
+
+    	//Creates a 10x10 matrix of bricks once
+    	if(!bricksCreated) {
+		    for (int i = 0; i<matrixY; i++) {
+		        for (int j = 0; j < matrixX; j++) {
+        			brick[i][j] = new Brick(g, 5+(i*65), 10+(j*25));
+	        	}
+	        }
+		    bricksCreated = true;
+    	}
+    	
+        player.createPlayer(g);																				//Creates the player
        
-        ball.createBall(g);                                                             //Creates the ball
-        ball.update();                                                                  //Updates the ball position
+        ball.createBall(g);                                                             					//Creates the ball
+        ball.update();                                                                  					//Updates the ball position
        
         if(ball.getYcoord() > player.getYpos() - (player.getHeight()/2) &&
                 ball.getXcoord() > (player.getXpos()) &&
                 ball.getXcoord() < (player.getXpos() + player.getLength())) {
             ball.changeYdirection();
-        } else if (ball.getXcoord() == 0.0f || ball.getXcoord() > getScreenWidth() - 10.0f) {
+            ball.setSpeed(1.01f);																			//Increases the speed of the ball each time it hits the player
+        } else if (ball.getXcoord() <= 0.0f || ball.getXcoord() > getScreenWidth() - 10.0f) {
             ball.changeXdirection();
-        } else if (ball.getYcoord() == getScreenHeight()-10.0f || ball.getYcoord() == 0.0f) {
+        } else if (ball.getYcoord() == getScreenHeight()-10.0f || ball.getYcoord() <= 0.0f) {
             ball.changeYdirection();
         } else if (ball.getYcoord() > player.getYpos() + player.getHeight()) {
             //TODO Show game over splash screen here
@@ -84,23 +101,58 @@ public class SimpleSlickGame extends BasicGame {
             gameOverText(gc, g, score);
             player.playerLife();
         }
-
-        //Creates a 10x10 matrix of bricks
-        for (int i = 0; i<10; i++) {
-            for (int j = 0; j < 10; j++) {
-            	brick[i][j] = new Brick(g, 5+(i*65), 10+(j*25), 55, 15);
-
+        
+        for (int k = 0; k<matrixY; k++) {
+            for (int j = 0; j < matrixX; j++) {
+            	if(ball.getYcoord() >= brick[k][j].getYpos() - 3 &&
+            			ball.getYcoord() <= brick[k][j].getYpos() + 3 &&
+            			ball.getXcoord() >= brick[k][j].getXpos() - 3 &&
+            			ball.getXcoord() <= brick[k][j].getXpos() + brick[k][j].getLength() +3) { 			//Top collision
+            		ball.changeYdirection();
+            		System.out.println("TOP");
+            		brick[k][j].setXpos(655);
+            		brick[k][j].setYpos(725);
+            	} else if(ball.getYcoord() >= brick[k][j].getYpos() + brick[k][j].getHeight() - 3 && 
+            			ball.getYcoord() <= brick[k][j].getYpos() + brick[k][j].getHeight() + 3 &&
+            			ball.getXcoord() >= brick[k][j].getXpos() -3 &&
+            			ball.getXcoord() <= brick[k][j].getXpos() + brick[k][j].getLength() + 3) { 			//Bottom collision
+            		ball.changeYdirection();
+            		System.out.println("BOTTOM");
+            		brick[k][j].setXpos(655);
+            		brick[k][j].setYpos(725);
+            	} else if(ball.getYcoord() >= brick[k][j].getYpos() - 3  &&
+            			ball.getYcoord() <= brick[k][j].getYpos() + brick[k][j].getHeight() + 3 &&
+            			ball.getXcoord() >= brick[k][j].getXpos() - 3 &&
+            			ball.getXcoord() <= brick[k][j].getXpos() + 3) { 									//Left collision
+            		ball.changeXdirection();
+            		System.out.println("LEFT");
+            		brick[k][j].setXpos(655);
+            		brick[k][j].setYpos(725);
+            	} else if(ball.getYcoord() >= brick[k][j].getYpos() - 3 &&
+            			ball.getYcoord() <= brick[k][j].getYpos() + brick[k][j].getHeight() + 3 &&
+            			ball.getXcoord() >= brick[k][j].getXpos() + brick[k][j].getLength() - 3 &&
+            			ball.getXcoord() <= brick[k][j].getXpos() + brick[k][j].getLength() + 3) { 			//Right collision
+            		ball.changeXdirection();
+            		System.out.println("RIGHT");
+            		brick[k][j].setXpos(655);
+            		brick[k][j].setYpos(725);
+            	}
+            	
+            	//If the brick hasn't already been hit, then redraw it every frame
+                if(brick[k][j].getXpos() != 655) {
+                	brick[k][j] = new Brick(g, 5+(k*65), 10+(j*25));
+                }
             }
-        }
+        }         	
     }
    
     public static void main(String[] args) {
         try {
             AppGameContainer appgc;
  
-            appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                   //Name of the game
-            appgc.setDisplayMode(getScreenWidth(), getScreenHeight(), false);  //Fit window to screen size
- 
+            appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                  //Name of the game
+            appgc.setDisplayMode(getScreenWidth(), getScreenHeight(), false);  				//Fit window to screen size
+            appgc.setTargetFrameRate(120);													//Limit the framerate to make the speed consistent over all computers
             appgc.start();
         } catch (SlickException ex) {
             Logger.getLogger(SimpleSlickGame.class.getName()).log(Level.SEVERE, null, ex);
@@ -142,7 +194,7 @@ public class SimpleSlickGame extends BasicGame {
         int y = 0;
         float boxLength = SimpleSlickGame.getScreenWidth();                                //Gets screen width
         float boxHeight = SimpleSlickGame.getScreenHeight();                               //Gets screen height
-        String endText = ("Game over! Your score was " +score);                                         //STILL NEEDS A SCORE TO PRINT OUT
+        String endText = ("Game over! Your score was " + score);                           //STILL NEEDS A SCORE TO PRINT OUT
         float textPosX = SimpleSlickGame.getScreenWidth()*0.31f;
         float textPosY = SimpleSlickGame.getScreenHeight()*0.50f;
        
