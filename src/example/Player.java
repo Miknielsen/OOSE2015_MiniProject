@@ -4,14 +4,14 @@ import org.newdawn.slick.Graphics;
 
 public class Player {
     
-	private float playerLengthMultiplier = 7;		//TODO change back to 7, 1 is for easy debugging
+	private float playerLengthMultiplier = 1;		//TODO change back to 7, 1 is for easy debugging
 	 
 	private float playerLength = SimpleSlickGame.getScreenWidth()/playerLengthMultiplier;
 	private float playerHeight = SimpleSlickGame.getScreenHeight()*0.02f;
 	private float playerXpos = SimpleSlickGame.getScreenWidth()/2.0f-(playerLength*0.50f);
 	private float playerYpos = SimpleSlickGame.getScreenHeight()*0.90f; 
     
-	private int life = 3;
+	private int playerLife = 3;
 	
     public void createPlayer(Graphics g) {
         g.drawRect(playerXpos,playerYpos, playerLength,playerHeight);                                  //Draws a rectangle (pos,pos,size,size)
@@ -51,7 +51,11 @@ public class Player {
     	playerYpos = SimpleSlickGame.getScreenHeight()*0.90f; 
     }
     
-    public void playerLife(int lifeDown){
-        life = life - lifeDown;
+    public void playerLife(){
+        playerLife--;
+        System.out.println(playerLife);
+        if(playerLife==0){
+            
+        }   
     }
 }

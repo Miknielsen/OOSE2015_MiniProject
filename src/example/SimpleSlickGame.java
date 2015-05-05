@@ -35,7 +35,12 @@ public class SimpleSlickGame extends BasicGame {
    
     private int score = 0;
 
+<<<<<<< HEAD
     private boolean bricksCreated = false;
+
+=======
+    private boolean bricksCreated = false;
+>>>>>>> origin/master
    
     public SimpleSlickGame(String gamename) {
         super(gamename);    
@@ -97,7 +102,7 @@ public class SimpleSlickGame extends BasicGame {
             ball.stopBall();
             System.out.println("Game over!");
             gameOverText(gc, g, score);
-            player.playerLife(1);
+            player.playerLife();
         }
         
         for (int k = 0; k<matrixY; k++) {
