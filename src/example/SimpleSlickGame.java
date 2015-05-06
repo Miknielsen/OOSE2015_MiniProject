@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------------------------
  *  Author:        Mads Kondrup Haugaard, Mikkel Moenster Nielsen, Nicolai Foldager
  *  Written:       30/3/2015
- *  Last updated:  30/3/2015
+ *  Last updated:  06/5/2015
  *  
  *  BREAKOUT GAME
  *  This game creates a player model, multiple 'enemy' blocks to destroy and a ball
@@ -31,13 +31,13 @@ public class SimpleSlickGame extends BasicGame {
     private int matrixX = 10;																				//Set size of X in the matrix
     private int matrixY = 10;																				//Set size of Y in the matrix
 
-    Brick brick[][] = new Brick[matrixX+1][matrixY+1];                                  
+    Brick brick[][] = new Brick[matrixX+1][matrixY+1];                     	             					//Declare the brick array with the matrix values.
     Player player = new Player();
     Ball ball = new Ball();
    
     private int score = 0;
 
-    private boolean bricksCreated = false;					//Boolean to check if the bricks are created. 
+    private boolean bricksCreated = false;																	//Boolean to check if the bricks are created. 
 
     
     public SimpleSlickGame(String gamename) {
@@ -106,6 +106,11 @@ public class SimpleSlickGame extends BasicGame {
             int input = JOptionPane.showOptionDialog(null, "You have lost the game!", "GAME OVER", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
 
             if(input == JOptionPane.OK_OPTION)
+            {
+                System.exit(0);
+            }
+            
+            if(input == JOptionPane.OK_CANCEL_OPTION)
             {
                 System.exit(0);
             }
