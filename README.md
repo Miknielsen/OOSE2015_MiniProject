@@ -29,6 +29,6 @@ After having cloned the repository to your disk you have to follow these few ste
 [![mik](http://avatars0.githubusercontent.com/u/11420498?v=3&s=60) Miknielsen](https://github.com/Miknielsen)  
 [![Nicfol](http://avatars0.githubusercontent.com/u/11005695?v=3&s=460) Nicfol](https://github.com/Nicfol)  
 
-[![ogaclejapan](https://avatars0.githubusercontent.com/u/1496485?v=3&s=32) ogaclejapan](https://github.com/ogaclejapan)
+[![nicfol](https://avatars0.githubusercontent.com/u/11005695?v=3&s=32) nicfol(https://github.com/ogaclejapan)
 
 ##
