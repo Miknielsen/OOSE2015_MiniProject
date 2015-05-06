@@ -19,6 +19,7 @@ public class Brick {
 	 */
     public Brick(Graphics g, int xPos, int yPos){
             g.drawRect(xPos,yPos, length, height);
+            
           
             g_xPos = xPos;
             g_yPos = yPos;

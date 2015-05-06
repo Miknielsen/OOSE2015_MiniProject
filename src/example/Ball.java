@@ -18,7 +18,8 @@ public class Ball {
 	 * @param g		The graphic engine that is going to be drawing the ball
 	 */
 	public void createBall(Graphics g) {
-		g.drawOval(coordX, coordY, ballWidth, ballHeight);
+		g.drawOval(coordX, coordY, ballWidth, ballHeight);											//Draws the ball / oval (pos,pos,size,size)
+		g.fillOval(coordX, coordY, ballWidth, ballHeight);											//Fills the ball (pos,pos,size,size)
 	}
 	
 	

@@ -190,7 +190,7 @@ public class SimpleSlickGame extends BasicGame {
      * @return height of the screen in pixel
      */
     public static int getScreenHeight() {
-        return 720;    
+        return 650;    
     }
    
     /**

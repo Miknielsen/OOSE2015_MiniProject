@@ -1,5 +1,6 @@
 package example;
 
+import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
 public class Player {
@@ -18,6 +19,7 @@ public class Player {
 	 */
     public void createPlayer(Graphics g) {
         g.drawRect(playerXpos,playerYpos, playerLength,playerHeight);                                  //Draws a rectangle (pos,pos,size,size)
+        g.fillRect(playerXpos,playerYpos, playerLength,playerHeight);								   //Fills the rectangle (pos,pos,size,size)
     }
     
     /**
