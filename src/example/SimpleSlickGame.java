@@ -75,10 +75,10 @@ public class SimpleSlickGame extends BasicGame {
     	if(!bricksCreated) {
 		    for (int i = 0; i<matrixY; i++) {
 		        for (int j = 0; j < matrixX; j++) {
-        			brick[i][j] = new Brick(g, 5+(i*65), 10+(j*25)); 			//Creates the bricks with spacing of 15 and 10.
+        			brick[i][j] = new Brick(g, 5+(i*65), 10+(j*25)); 										//Creates the bricks with spacing of 15 and 10.
 	        	}
 	        }
-		    bricksCreated = true;												//When bricks are created, set it to true.
+		    bricksCreated = true;																			//When bricks are created, set it to true.
     	}
     	
         player.createPlayer(g);																				//Creates the player
@@ -164,9 +164,9 @@ public class SimpleSlickGame extends BasicGame {
         try {
             AppGameContainer appgc;
  
-            appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                  //Name of the game
-            appgc.setDisplayMode(getScreenWidth(), getScreenHeight(), false);  				//Fit window to screen size
-            appgc.setTargetFrameRate(120);													//Limit the framerate to make the speed consistent over all computers
+            appgc = new AppGameContainer(new SimpleSlickGame("Breakout"));                 			 		//Name of the game
+            appgc.setDisplayMode(getScreenWidth(), getScreenHeight(), false);  								//Fit window to screen size
+            appgc.setTargetFrameRate(120);																	//Limit the framerate to make the speed consistent over all computers
             appgc.start();
         } catch (SlickException ex) {
             Logger.getLogger(SimpleSlickGame.class.getName()).log(Level.SEVERE, null, ex);
@@ -207,24 +207,26 @@ public class SimpleSlickGame extends BasicGame {
      * telling the player that the game is over, along with the score.
      * The text is in black.
      *  
-     * @param gc        Gamecontainer                                                       //TODO Find out what a gamecontainer actually is
+     * @param gc        Gamecontainer                                                       				//TODO Find out what a gamecontainer actually is
      * @param g         Graphic engine to draw objects and change colors
      * @param score     The score value to be shown when the game is over
      */
+    
     public void gameOverText(GameContainer gc, Graphics g, int score)  {
     	
         int x = 0;
         int y = 0;
-        float boxLength = SimpleSlickGame.getScreenWidth();                                 //Gets screen width
-        float boxHeight = SimpleSlickGame.getScreenHeight();                                //Gets screen height
-        String endText = ("Game over! Your score was " + score);                            //STILL NEEDS A SCORE TO PRINT OUT
-        float textPosX = SimpleSlickGame.getScreenWidth()*0.31f;                            //TODO consult nicolai, line above (mikkel)
+        float boxLength = SimpleSlickGame.getScreenWidth();                                 				//Gets screen width
+        float boxHeight = SimpleSlickGame.getScreenHeight();                               					//Gets screen height
+        
+        String endText = ("Game over! Your score was " + score);                           				 	//STILL NEEDS A SCORE TO PRINT OUT
+        float textPosX = SimpleSlickGame.getScreenWidth()*0.31f;                            				//TODO consult nicolai, line above (mikkel)
         float textPosY = SimpleSlickGame.getScreenHeight()*0.50f;
        
         g.setColor(Color.cyan);
         g.fillRect(x, y, boxLength, boxHeight);
         g.drawRect(x, y, boxLength, boxHeight);
         g.setColor(Color.black);
-        g.drawString(endText, textPosX, textPosY);
-    }
+        g.drawString(endText, textPosX, textPosY); 
+    } 
 }
