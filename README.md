@@ -6,24 +6,23 @@ Written in Java using the Slick2D game library.
 
 Version 1.0 was released May 7, 2015.
 
-**Please do not submit tickets as the project is not maintained**
+**Please *do not* submit tickets as the project is not maintained**
 
 ## INSTALLATION
 
 1. Fork the project and clone to your local machine
-2. Import the project into the Java IDE of your choice (Eclipse, IntelliJ, etc.)
-3. Build the project
-4. Enjoy!
+2. Run the <ADD FILE NAME HERE WHEN RELEASED 1.0>.jar file
+3. Enjoy!
 
 ## HOW TO PLAY
 
-* Use *D* to move right and *A* to move left.
+* Use key *D* to move right and key *A* to move left.
 * Avoid the ball hitting the bottom of the window.
 * You've won when the ball has hit every single brick in the top.
 
 ## AUTHORS
 
-[![MikNielsen](http://avatars0.githubusercontent.com/u/11420498?v=3&s=32) Miknielsen](https://github.com/Miknielsen)
+[![MikNielsen](https://avatars0.githubusercontent.com/u/11420498?v=3&s=32) Miknielsen](https://github.com/Miknielsen)
 
 [![madskondrup](http://findicons.com/files/icons/941/web_design/32/user_business.png) madskondrup](https://github.com/madskondrup)
 
