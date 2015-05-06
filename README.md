@@ -25,8 +25,8 @@ After having cloned the repository to your disk you have to follow these few ste
 
 ## Developers
 
-[![madskondrup](http://avatars3.githubusercontent.com/u/9328133?v=3&s=60) madskondrup](https://github.com/madskondrup)  
-[![mik](http://avatars2.githubusercontent.com/u/11420498?v=3&s=60) Miknielsen](https://github.com/Miknielsen)  
-[![Nicfol](http://avatars2.githubusercontent.com/u/11005695?v=3&s=460) Nicfol](https://github.com/Nicfol)  
+[![madskondrup](http://avatars0.githubusercontent.com/u/9328133?v=3&s=60) madskondrup](https://github.com/madskondrup)  
+[![mik](http://avatars0.githubusercontent.com/u/11420498?v=3&s=60) Miknielsen](https://github.com/Miknielsen)  
+[![Nicfol](http://avatars0.githubusercontent.com/u/11005695?v=3&s=460) Nicfol](https://github.com/Nicfol)  
 
 ##
