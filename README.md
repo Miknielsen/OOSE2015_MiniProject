@@ -23,11 +23,12 @@ Version 1.0 was released May 7, 2015.
 
 ## AUTHORS
 
-> [![MikNielsen](http://avatars0.githubusercontent.com/u/11420498?v=3&s=32) Miknielsen](https://github.com/Miknielsen)
+ [![MikNielsen](http://avatars0.githubusercontent.com/u/11420498?v=3&s=32) Miknielsen](https://github.com/Miknielsen)  
 
-> [![madskondrup](http://findicons.com/files/icons/941/web_design/32/user_business.png) madskondrup](https://github.com/madskondrup)
+ [![madskondrup](http://findicons.com/files/icons/941/web_design/32/user_business.png) madskondrup](https://github.com/madskondrup)  
 
-> [![nicfol](http://findicons.com/files/icons/941/web_design/32/user_business.png) nicfol](https://github.com/nicfol)
+ [![nicfol](http://findicons.com/files/icons/941/web_design/32/user_business.png) nicfol](https://github.com/nicfol)  
+
 
 ## LICENSE
 Breakdown is build on [Slick 2D](http://slick.ninjacave.com/) which is licensed under the [BSD License](http://slick.ninjacave.com/license/).
