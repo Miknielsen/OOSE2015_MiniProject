@@ -17,3 +17,16 @@ After having cloned the repository to your disk you have to follow these few ste
 11. Select your operating system and click OK until you get back to the default eclipse window.
 12. Press play to check it it works.
 13. Now, you can start making your own game.
+
+
+# Breakout
+
+## How to play
+
+## Developers
+
+[![madskondrup](http://avatars3.githubusercontent.com/u/9328133?v=3&s=60) madskondrup](https://github.com/madskondrup)  
+[![mik](http://avatars2.githubusercontent.com/u/11420498?v=3&s=60) Miknielsen](https://github.com/Miknielsen)  
+[![Nicfol](http://avatars2.githubusercontent.com/u/11005695?v=3&s=460) Nicfol](https://github.com/Nicfol)  
+
+##
