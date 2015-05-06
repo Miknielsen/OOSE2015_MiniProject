@@ -37,7 +37,7 @@ public class SimpleSlickGame extends BasicGame {
    
     private int score = 0;
 
-    private boolean bricksCreated = false;
+    private boolean bricksCreated = false;					//Boolean to check if the bricks are created. 
 
     
     public SimpleSlickGame(String gamename) {
@@ -75,10 +75,10 @@ public class SimpleSlickGame extends BasicGame {
     	if(!bricksCreated) {
 		    for (int i = 0; i<matrixY; i++) {
 		        for (int j = 0; j < matrixX; j++) {
-        			brick[i][j] = new Brick(g, 5+(i*65), 10+(j*25));
+        			brick[i][j] = new Brick(g, 5+(i*65), 10+(j*25)); 			//Creates the bricks with spacing of 15 and 10.
 	        	}
 	        }
-		    bricksCreated = true;
+		    bricksCreated = true;												//When bricks are created, set it to true.
     	}
     	
         player.createPlayer(g);																				//Creates the player
