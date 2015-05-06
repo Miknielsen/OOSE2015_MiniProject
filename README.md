@@ -19,6 +19,7 @@ The latest release can be found on the [release part of this repository](https:/
 
 ## HOW TO PLAY
 
+* First press *space* to launch the ball.
 * Use key *D* to move right and key *A* to move left.
 * Avoid the ball hitting the bottom of the window.
 * You've won when the ball has hit every single brick in the top.
