@@ -9,10 +9,13 @@ Version 1.0 was released May 7, 2015.
 **Please *do not* submit tickets as the project is not maintained**
 
 ## INSTALLATION
+The latest release can be found on the [release part of this repository](https://github.com/Miknielsen/OOSE2015_MiniProject/releases). Download and execute the Breakout.jar file to launch the game.
+
+## BUILD UPON IT
 
 1. Fork the project and clone to your local machine
-2. Run the <ADD FILE NAME HERE WHEN RELEASED 1.0>.jar file
-3. Enjoy!
+2. Import the project into your preferred IDE (Eclipse, IntelliJ, etc.)
+3. Start coding away!
 
 ## HOW TO PLAY
 
