@@ -24,9 +24,11 @@ After having cloned the repository to your disk you have to follow these few ste
 ## How to play
 
 ## Developers
-https://avatars0.githubusercontent.com/u/1833474?v=3&s=32
+
 [![madskondrup](http://avatars0.githubusercontent.com/u/9328133?v=3&s=32) madskondrup](https://github.com/madskondrup)  
 [![mik](http://avatars0.githubusercontent.com/u/11420498?v=3&s=60) Miknielsen](https://github.com/Miknielsen)  
 [![Nicfol](http://avatars0.githubusercontent.com/u/11005695?v=3&s=460) Nicfol](https://github.com/Nicfol)  
+
+[![ogaclejapan](https://avatars0.githubusercontent.com/u/1496485?v=3&s=32) ogaclejapan](https://github.com/ogaclejapan)
 
 ##
