@@ -18,7 +18,7 @@ public class Brick {
 	 * @param yPos     Integer value which sets the y-coordinate of a brick
 	 */
     public Brick(Graphics g, int xPos, int yPos){
-
+    	
     	g.drawRect(xPos,yPos, length, height);
     	      
             g_xPos = xPos;
