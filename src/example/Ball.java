@@ -11,8 +11,8 @@ public class Ball {
 	private float speedY = -1.2f;
 	private float coordX = SimpleSlickGame.getScreenWidth() * 0.5f;
 	private float coordY = SimpleSlickGame.getScreenHeight() * 0.85f;
-	private float ballWidth = 15;
-	private float ballHeight = 15;
+	private float ballWidth = 15;															//Width of the ball
+	private float ballHeight = 15;															//Height of the ball
 
 	/**
 	 * Creates the ball

@@ -5,11 +5,11 @@ import org.newdawn.slick.Graphics;
  
 public class Brick {
 	
-	int g_xPos;
+	int g_xPos;															//initializing the two position variables.
 	int g_yPos;
-	int length = 55;
-	int height = 15;
- 
+	int length = 55;													//Length of each brick
+	int height = 15;													//Height of each brick
+	 
 	/**
 	 * Creates an enemy brick at a given position and given size
 	 * 
@@ -18,9 +18,9 @@ public class Brick {
 	 * @param yPos     Integer value which sets the y-coordinate of a brick
 	 */
     public Brick(Graphics g, int xPos, int yPos){
-            g.drawRect(xPos,yPos, length, height);
-            
-          
+
+    	g.drawRect(xPos,yPos, length, height);
+    	      
             g_xPos = xPos;
             g_yPos = yPos;
     }
@@ -32,6 +32,7 @@ public class Brick {
      */
     public void setXpos(int pos) {
     	g_xPos = pos;
+    	
     }
     
     /**

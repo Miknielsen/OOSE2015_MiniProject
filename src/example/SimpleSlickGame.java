@@ -13,7 +13,6 @@ package example;
  
 import java.util.logging.Level;
 import java.util.logging.Logger;
- 
 import javax.swing.JOptionPane;
 
 import org.newdawn.slick.AppGameContainer;
@@ -94,6 +93,10 @@ public class SimpleSlickGame extends BasicGame {
         }
     	*/
         
+    	
+    	
+    	
+    	
     	//Creates a 10x10 matrix of bricks once
     	if(!bricksCreated) {
 		    for (int i = 0; i<matrixY; i++) {
@@ -115,13 +118,13 @@ public class SimpleSlickGame extends BasicGame {
                 ball.getXcoord() > (player.getXpos()) &&
                 ball.getXcoord() < (player.getXpos() + player.getLength())) {
             ball.changeYdirection();
-            ball.setSpeed(1.02f);																			//Increases the speed of the ball each time it hits the player
+            ball.setSpeed(1.025f);																			//Increases the speed of the ball each time it hits the player
         } else if (ball.getXcoord() <= 0.0f || ball.getXcoord() > getScreenWidth() - 10.0f) {
             ball.changeXdirection();
         } else if (ball.getYcoord() == getScreenHeight()-10.0f || ball.getYcoord() <= 0.0f) {
             ball.changeYdirection();
         } else if (ball.getYcoord() > player.getYpos() + player.getHeight()) {
-            //TODO Show game over splash screen here
+            
             ball.stopBall();
             ball.setXcoord(0);
             ball.setYcoord(0);
