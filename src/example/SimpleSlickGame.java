@@ -101,7 +101,7 @@ public class SimpleSlickGame extends BasicGame {
             ball.setYcoord(0);
             System.out.println("Game over!");
 
-            int input = JOptionPane.showOptionDialog(null, "You have lost the game!", "GAME OVER", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+            int input = JOptionPane.showOptionDialog(null, "You have lost the game, your score is "+ score, "GAME OVER", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
 
             if(input == JOptionPane.OK_OPTION)
             {
@@ -122,6 +122,7 @@ public class SimpleSlickGame extends BasicGame {
             			ball.getXcoord() >= brick[k][j].getXpos() - 3 &&
             			ball.getXcoord() <= brick[k][j].getXpos() + brick[k][j].getLength() +3) { 			//Top collision
             		ball.changeYdirection();
+            		score++;
             		System.out.println("TOP");
             		brick[k][j].setXpos(655);
             		brick[k][j].setYpos(725);
@@ -131,6 +132,7 @@ public class SimpleSlickGame extends BasicGame {
             			ball.getXcoord() >= brick[k][j].getXpos() -3 &&
             			ball.getXcoord() <= brick[k][j].getXpos() + brick[k][j].getLength() + 3) { 			//Bottom collision
             		ball.changeYdirection();
+            		score++;
             		System.out.println("BOTTOM");
             		brick[k][j].setXpos(655);
             		brick[k][j].setYpos(725);
@@ -140,6 +142,7 @@ public class SimpleSlickGame extends BasicGame {
             			ball.getXcoord() >= brick[k][j].getXpos() - 3 &&
             			ball.getXcoord() <= brick[k][j].getXpos() + 3) { 									//Left collision
             		ball.changeXdirection();
+            		score++;
             		System.out.println("LEFT");
             		brick[k][j].setXpos(655);
             		brick[k][j].setYpos(725);
@@ -149,6 +152,7 @@ public class SimpleSlickGame extends BasicGame {
             			ball.getXcoord() >= brick[k][j].getXpos() + brick[k][j].getLength() - 3 &&
             			ball.getXcoord() <= brick[k][j].getXpos() + brick[k][j].getLength() + 3) { 			//Right collision
             		ball.changeXdirection();
+            		score++;
             		System.out.println("RIGHT");
             		brick[k][j].setXpos(655);
             		brick[k][j].setYpos(725);
