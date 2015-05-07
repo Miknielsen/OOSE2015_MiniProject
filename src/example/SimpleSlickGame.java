@@ -47,7 +47,7 @@ public class SimpleSlickGame extends BasicGame {
  
     @Override
     public void init(GameContainer gc) throws SlickException {}
- 
+    
     @Override
     public void update(GameContainer gc, int i) throws SlickException {
                
@@ -130,8 +130,10 @@ public class SimpleSlickGame extends BasicGame {
             }
             
             if(input == JOptionPane.OK_CANCEL_OPTION)
-            {
-                System.exit(0);
+            {	          
+              
+                
+            	System.exit(0);	
             }
         }
         
