@@ -103,7 +103,7 @@ public class Ball {
 	}
 	
 	/**
-	 * Multiplies the speed of the ball with inputted value on both
+	 * Multiplies the speed of the ball with inputed value on both
 	 * the x- and y-axis
 	 * 
 	 * @param multiplier       Takes a float as input to be multiplied with the ball speed  

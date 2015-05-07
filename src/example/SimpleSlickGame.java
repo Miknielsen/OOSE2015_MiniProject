@@ -11,9 +11,16 @@
  
 package example;
  
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
@@ -28,17 +35,19 @@ public class SimpleSlickGame extends BasicGame {
     
     private int matrixX = 10;																				//Set size of X in the matrix
     private int matrixY = 10;																				//Set size of Y in the matrix
-
+    
     Brick brick[][] = new Brick[matrixX+1][matrixY+1];                     	             					//Declare the brick array with the matrix values.
     Player player = new Player();
     Ball ball = new Ball();
-   
+    
     private int score = 0;
     
-    //private boolean ballStart = false;
+    public boolean ballStart = false;
     private boolean bricksCreated = false;																	//Boolean to check if the bricks are created. 
 
-    
+
+
+
     public SimpleSlickGame(String gamename) {
         super(gamename);    
     }
@@ -81,23 +90,23 @@ public class SimpleSlickGame extends BasicGame {
         		
         }
     	
-    	/*
+    	
+		
+		/*
     	int input2 = JOptionPane.showConfirmDialog(null, "Press yes to start the game", "Start",JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
         if (input2 == JOptionPane.YES_OPTION) {
-        	  ball.update();                                                                					
-        	
+        	  ball.createBall(g);                                                               					
+        	  	
         }
         
         if (input2 == JOptionPane.NO_OPTION) {
         	System.exit(0);                                                                  					
         }
+    	
     	*/
-        
-    	
-    	
-    	
-    	
+		
     	//Creates a 10x10 matrix of bricks once
+    	
     	if(!bricksCreated) {
 		    for (int i = 0; i<matrixY; i++) {
 		        for (int j = 0; j < matrixX; j++) {
@@ -107,13 +116,17 @@ public class SimpleSlickGame extends BasicGame {
 		    bricksCreated = true;																			//When bricks are created, set it to true.
     	}
     	
+    	
+    	
         player.createPlayer(g);																				//Creates the player
-       
         
         ball.createBall(g);                                                             					//Creates the ball
-        ball.update();                                                             							//Update the ball
+        
+        
+       
+        ball.update();
+                                                                  											//Update the ball
             
-      
         if(ball.getYcoord() > player.getYpos() - (player.getHeight()/2) &&
                 ball.getXcoord() > (player.getXpos()) &&
                 ball.getXcoord() < (player.getXpos() + player.getLength())) {
@@ -193,6 +206,7 @@ public class SimpleSlickGame extends BasicGame {
     }
    
     public static void main(String[] args) {
+    	
         try {
             AppGameContainer appgc;
  
