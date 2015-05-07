@@ -69,7 +69,17 @@ public class SimpleSlickGame extends BasicGame {
     }
     
     public void render(GameContainer gc, Graphics g) throws SlickException  {
-
+    	
+    	
+    	//End game if the player has eliminated all the blocks (all hundred).
+    	if  (score==100){
+        	int input1 = JOptionPane.showOptionDialog(null, "You have won the game, your score is "+ score, "WIN", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+        	if(input1 == JOptionPane.OK_OPTION) {
+        		System.exit(0);
+        	}
+        		
+        }
+        
     	//Creates a 10x10 matrix of bricks once
     	if(!bricksCreated) {
 		    for (int i = 0; i<matrixY; i++) {
@@ -102,7 +112,7 @@ public class SimpleSlickGame extends BasicGame {
             System.out.println("Game over!");
 
             int input = JOptionPane.showOptionDialog(null, "You have lost the game, your score is "+ score, "GAME OVER", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
-
+            
             if(input == JOptionPane.OK_OPTION)
             {
                 System.exit(0);
@@ -203,6 +213,7 @@ public class SimpleSlickGame extends BasicGame {
      */
     public void setScore(int toScore) {
         score = score + toScore;
+           
     }
    
     /**

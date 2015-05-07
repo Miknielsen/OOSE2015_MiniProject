@@ -21,6 +21,8 @@ public class Player {
         g.fillRect(playerXpos,playerYpos, playerLength,playerHeight);								   //Fills the rectangle (pos,pos,size,size)
     }
     
+    
+    
     /**
      * Increments player movement to the right, moving 3 pixels
      */
