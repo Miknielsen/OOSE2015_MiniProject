@@ -101,7 +101,6 @@ public class SimpleSlickGame extends BasicGame {
             ball.setXcoord(0);
             ball.setYcoord(0);
             System.out.println("Game over!");
-            gameOverText(gc, g, score);
 
             int input = JOptionPane.showOptionDialog(null, "You have lost the game!", "GAME OVER", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
 
@@ -212,22 +211,5 @@ public class SimpleSlickGame extends BasicGame {
      * @param g         Graphic engine to draw objects and change colors
      * @param score     The score value to be shown when the game is over
      */
-    
-    public void gameOverText(GameContainer gc, Graphics g, int score)  {
-    	
-        int x = 0;
-        int y = 0;
-        float boxLength = SimpleSlickGame.getScreenWidth();                                 				//Gets screen width
-        float boxHeight = SimpleSlickGame.getScreenHeight();                               					//Gets screen height
-        
-        String endText = ("Game over! Your score was " + score);                           				 	//STILL NEEDS A SCORE TO PRINT OUT
-        float textPosX = SimpleSlickGame.getScreenWidth()*0.31f;                            				//TODO consult nicolai, line above (mikkel)
-        float textPosY = SimpleSlickGame.getScreenHeight()*0.50f;
-       
-        g.setColor(Color.cyan);
-        g.fillRect(x, y, boxLength, boxHeight);
-        g.drawRect(x, y, boxLength, boxHeight);
-        g.setColor(Color.black);
-        g.drawString(endText, textPosX, textPosY); 
-    } 
+
 }

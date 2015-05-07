@@ -1,6 +1,5 @@
 package example;
 
-import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 
 public class Player {
