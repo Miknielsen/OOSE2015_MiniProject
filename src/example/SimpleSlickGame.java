@@ -11,16 +11,10 @@
  
 package example;
  
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
@@ -44,8 +38,6 @@ public class SimpleSlickGame extends BasicGame {
     
     public boolean ballStart = false;
     private boolean bricksCreated = false;																	//Boolean to check if the bricks are created. 
-
-
 
 
     public SimpleSlickGame(String gamename) {
@@ -90,27 +82,13 @@ public class SimpleSlickGame extends BasicGame {
         		
         }
     	
-    	
-		
-		/*
-    	int input2 = JOptionPane.showConfirmDialog(null, "Press yes to start the game", "Start",JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
-        if (input2 == JOptionPane.YES_OPTION) {
-        	  ball.createBall(g);                                                               					
-        	  	
-        }
-        
-        if (input2 == JOptionPane.NO_OPTION) {
-        	System.exit(0);                                                                  					
-        }
-    	
-    	*/
 		
     	//Creates a 10x10 matrix of bricks once
     	
     	if(!bricksCreated) {
 		    for (int i = 0; i<matrixY; i++) {
 		        for (int j = 0; j < matrixX; j++) {
-        			brick[i][j] = new Brick(g, 5+(i*65), 10+(j*25)); 										//Creates the bricks with spacing of 15 and 10.
+        			brick[i][j] = new Brick(g, 5+(i*65), 10+(j*25)); 										//Create the bricks with a spacing of 15 and 10 (bricklength+15=65 & brickheight+10=25)
 	        	}
 	        }
 		    bricksCreated = true;																			//When bricks are created, set it to true.
@@ -120,10 +98,9 @@ public class SimpleSlickGame extends BasicGame {
     	
         player.createPlayer(g);																				//Creates the player
         
-        ball.createBall(g);                                                             					//Creates the ball
-        
-        
-       
+                                                                    										//Creates the ball
+          
+        ball.createBall(g); 
         ball.update();
                                                                   											//Update the ball
             
@@ -164,7 +141,7 @@ public class SimpleSlickGame extends BasicGame {
             			ball.getXcoord() >= brick[k][j].getXpos() - 3 &&
             			ball.getXcoord() <= brick[k][j].getXpos() + brick[k][j].getLength() +3) { 			//Top collision
             		ball.changeYdirection();
-            		score++;
+            		score++;																				//Add one to score after each collision
             		System.out.println("TOP");
             		brick[k][j].setXpos(655);
             		brick[k][j].setYpos(725);
@@ -174,7 +151,7 @@ public class SimpleSlickGame extends BasicGame {
             			ball.getXcoord() >= brick[k][j].getXpos() -3 &&
             			ball.getXcoord() <= brick[k][j].getXpos() + brick[k][j].getLength() + 3) { 			//Bottom collision
             		ball.changeYdirection();
-            		score++;
+            		score++;																				//Add one to score after each collision
             		System.out.println("BOTTOM");
             		brick[k][j].setXpos(655);
             		brick[k][j].setYpos(725);
@@ -184,7 +161,7 @@ public class SimpleSlickGame extends BasicGame {
             			ball.getXcoord() >= brick[k][j].getXpos() - 3 &&
             			ball.getXcoord() <= brick[k][j].getXpos() + 3) { 									//Left collision
             		ball.changeXdirection();
-            		score++;
+            		score++;																				//Add one to score after each collision
             		System.out.println("LEFT");
             		brick[k][j].setXpos(655);
             		brick[k][j].setYpos(725);
@@ -194,12 +171,12 @@ public class SimpleSlickGame extends BasicGame {
             			ball.getXcoord() >= brick[k][j].getXpos() + brick[k][j].getLength() - 3 &&
             			ball.getXcoord() <= brick[k][j].getXpos() + brick[k][j].getLength() + 3) { 			//Right collision
             		ball.changeXdirection();
-            		score++;
+            		score++;																				//Add one to score after each collision
             		System.out.println("RIGHT");
             		brick[k][j].setXpos(655);
             		brick[k][j].setYpos(725);
             	} else if(brick[k][j].getXpos() != 655) {
-                	brick[k][j] = new Brick(g, 5+(k*65), 10+(j*25));            		
+                	brick[k][j] = new Brick(g, 5+(k*65), 10+(j*25));         								   		
             	}
             }
         }         	
@@ -226,9 +203,9 @@ public class SimpleSlickGame extends BasicGame {
      * @return width of the screen in pixel
      */
     public static int getScreenWidth() {                                                                
-        return 650;
+    	return 650;
         
-    }
+   }
    
     /**
      * Gets the height of the playing window
