@@ -55,7 +55,6 @@ public class Ball {
 	 * Changes the direction of which the ball is moving on x-axis
 	 */
 	public void changeXdirection() {
-		Random rand = new Random();
 		speedX = speedX * -1;
 	}
 	

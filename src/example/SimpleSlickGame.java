@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------------------------
  *  Author:        Mads Kondrup Haugaard, Mikkel Moenster Nielsen, Nicolai Foldager
  *  Written:       30/3/2015
- *  Last updated:  06/5/2015
+ *  Last updated:  07/5/2015
  *  
  *  BREAKOUT GAME
  *  This game creates a player model, multiple 'enemy' blocks to destroy and a ball
