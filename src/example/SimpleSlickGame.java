@@ -35,7 +35,8 @@ public class SimpleSlickGame extends BasicGame {
     Ball ball = new Ball();
    
     private int score = 0;
-
+    
+    //private boolean ballStart = false;
     private boolean bricksCreated = false;																	//Boolean to check if the bricks are created. 
 
     
@@ -73,12 +74,25 @@ public class SimpleSlickGame extends BasicGame {
     	
     	//End game if the player has eliminated all the blocks (all hundred).
     	if  (score==100){
+    		//JOptionPane.showMessageDialog(null, "alert", "alert", JOptionPane.ERROR_MESSAGE);
         	int input1 = JOptionPane.showOptionDialog(null, "You have won the game, your score is "+ score, "WIN", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
         	if(input1 == JOptionPane.OK_OPTION) {
         		System.exit(0);
         	}
         		
         }
+    	
+    	/*
+    	int input2 = JOptionPane.showConfirmDialog(null, "Press yes to start the game", "Start",JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+        if (input2 == JOptionPane.YES_OPTION) {
+        	  ball.update();                                                                					
+        	
+        }
+        
+        if (input2 == JOptionPane.NO_OPTION) {
+        	System.exit(0);                                                                  					
+        }
+    	*/
         
     	//Creates a 10x10 matrix of bricks once
     	if(!bricksCreated) {
@@ -92,9 +106,11 @@ public class SimpleSlickGame extends BasicGame {
     	
         player.createPlayer(g);																				//Creates the player
        
+        
         ball.createBall(g);                                                             					//Creates the ball
-        ball.update();                                                                  					//Updates the ball position
-       
+        ball.update();                                                             							//Update the ball
+            
+      
         if(ball.getYcoord() > player.getYpos() - (player.getHeight()/2) &&
                 ball.getXcoord() > (player.getXpos()) &&
                 ball.getXcoord() < (player.getXpos() + player.getLength())) {
@@ -215,15 +231,5 @@ public class SimpleSlickGame extends BasicGame {
         score = score + toScore;
            
     }
-   
-    /**
-     * When the game ends, set background color to cyan and show a text
-     * telling the player that the game is over, along with the score.
-     * The text is in black.
-     *  
-     * @param gc        Gamecontainer                                                       				//TODO Find out what a gamecontainer actually is
-     * @param g         Graphic engine to draw objects and change colors
-     * @param score     The score value to be shown when the game is over
-     */
 
 }
