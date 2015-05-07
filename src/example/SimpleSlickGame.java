@@ -14,6 +14,7 @@ package example;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javax.swing.JOptionPane;
 
 import org.newdawn.slick.AppGameContainer;
@@ -27,8 +28,8 @@ import org.newdawn.slick.util.Log;
  
 public class SimpleSlickGame extends BasicGame {
     
-    private int matrixX = 10;																				//Set size of X in the matrix
-    private int matrixY = 10;																				//Set size of Y in the matrix
+    private int matrixX = 10;																				//Set size of X in the matrix array to use with the bricks
+    private int matrixY = 10;																				//Set size of Y in the matrix arrray to use with the bricks
     
     Brick brick[][] = new Brick[matrixX+1][matrixY+1];                     	             					//Declare the brick array with the matrix values.
     Player player = new Player();
@@ -70,12 +71,13 @@ public class SimpleSlickGame extends BasicGame {
     }
     
     public void render(GameContainer gc, Graphics g) throws SlickException  {
+    																									//Draw the score in the game-window and place it just below the players start position.
+    	g.drawString("Blocks hit: "+ score,SimpleSlickGame.getScreenHeight()*0.40f,SimpleSlickGame.getScreenHeight()*0.95f);
     	
-    	
-    	//End game if the player has eliminated all the blocks (all hundred).
+    	//End game if the player has eliminated all the blocks (all 100).
     	if  (score==100){
-    		//JOptionPane.showMessageDialog(null, "alert", "alert", JOptionPane.ERROR_MESSAGE);
-        	int input1 = JOptionPane.showOptionDialog(null, "You have won the game, your score is "+ score, "WIN", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+    		
+        	int input1 = JOptionPane.showOptionDialog(null, "You have won the game, your score was "+ score, "WIN", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
         	if(input1 == JOptionPane.OK_OPTION) {
         		System.exit(0);
         	}
@@ -118,13 +120,13 @@ public class SimpleSlickGame extends BasicGame {
             ball.stopBall();
             ball.setXcoord(0);
             ball.setYcoord(0);
-            System.out.println("Game over!");
+            System.out.println("Game over!");																//Creates jpanel with game over screen and score display.
 
-            int input = JOptionPane.showOptionDialog(null, "You have lost the game, your score is "+ score, "GAME OVER", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+            int input = JOptionPane.showOptionDialog(null, "You have lost the game, your score was "+ score, "GAME OVER", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
             
-            if(input == JOptionPane.OK_OPTION)
+            if(input == JOptionPane.OK_OPTION)				
             {
-                System.exit(0);
+                System.exit(0);																				//if button pressed --> exit.
             }
             
             if(input == JOptionPane.OK_CANCEL_OPTION)
