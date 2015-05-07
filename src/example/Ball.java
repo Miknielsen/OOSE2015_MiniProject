@@ -1,5 +1,7 @@
 package example;
 
+import java.util.Random;
+
 import org.newdawn.slick.Graphics;
 
 public class Ball {
@@ -53,6 +55,7 @@ public class Ball {
 	 * Changes the direction of which the ball is moving on x-axis
 	 */
 	public void changeXdirection() {
+		Random rand = new Random();
 		speedX = speedX * -1;
 	}
 	
@@ -60,7 +63,8 @@ public class Ball {
 	 * Changes the direction of which the ball is moving on y-axis
 	 */
 	public void changeYdirection() {
-		speedY = speedY * -1;
+		Random rand = new Random();
+		speedY = speedY * -1 + (rand.nextFloat() * (1.3f - 1.0f));;
 	}
 	
 	/**

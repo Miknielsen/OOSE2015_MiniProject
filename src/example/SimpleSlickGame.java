@@ -118,7 +118,8 @@ public class SimpleSlickGame extends BasicGame {
         
         for (int k = 0; k<matrixY; k++) {
             for (int j = 0; j < matrixX; j++) {
-            	if(ball.getYcoord() >= brick[k][j].getYpos() - 3 &&
+            	if(brick[k][j].getXpos() != 655 &&
+            			ball.getYcoord() >= brick[k][j].getYpos() - 3 &&
             			ball.getYcoord() <= brick[k][j].getYpos() + 3 &&
             			ball.getXcoord() >= brick[k][j].getXpos() - 3 &&
             			ball.getXcoord() <= brick[k][j].getXpos() + brick[k][j].getLength() +3) { 			//Top collision
@@ -126,7 +127,8 @@ public class SimpleSlickGame extends BasicGame {
             		System.out.println("TOP");
             		brick[k][j].setXpos(655);
             		brick[k][j].setYpos(725);
-            	} else if(ball.getYcoord() >= brick[k][j].getYpos() + brick[k][j].getHeight() - 3 && 
+            	} else if(brick[k][j].getXpos() != 655 &&
+            			ball.getYcoord() >= brick[k][j].getYpos() + brick[k][j].getHeight() - 3 && 
             			ball.getYcoord() <= brick[k][j].getYpos() + brick[k][j].getHeight() + 3 &&
             			ball.getXcoord() >= brick[k][j].getXpos() -3 &&
             			ball.getXcoord() <= brick[k][j].getXpos() + brick[k][j].getLength() + 3) { 			//Bottom collision
@@ -134,7 +136,8 @@ public class SimpleSlickGame extends BasicGame {
             		System.out.println("BOTTOM");
             		brick[k][j].setXpos(655);
             		brick[k][j].setYpos(725);
-            	} else if(ball.getYcoord() >= brick[k][j].getYpos() - 3  &&
+            	} else if(brick[k][j].getXpos() != 655 &&
+            			ball.getYcoord() >= brick[k][j].getYpos() - 3  &&
             			ball.getYcoord() <= brick[k][j].getYpos() + brick[k][j].getHeight() + 3 &&
             			ball.getXcoord() >= brick[k][j].getXpos() - 3 &&
             			ball.getXcoord() <= brick[k][j].getXpos() + 3) { 									//Left collision
@@ -142,7 +145,8 @@ public class SimpleSlickGame extends BasicGame {
             		System.out.println("LEFT");
             		brick[k][j].setXpos(655);
             		brick[k][j].setYpos(725);
-            	} else if(ball.getYcoord() >= brick[k][j].getYpos() - 3 &&
+            	} else if(brick[k][j].getXpos() != 655 &&
+            			ball.getYcoord() >= brick[k][j].getYpos() - 3 &&
             			ball.getYcoord() <= brick[k][j].getYpos() + brick[k][j].getHeight() + 3 &&
             			ball.getXcoord() >= brick[k][j].getXpos() + brick[k][j].getLength() - 3 &&
             			ball.getXcoord() <= brick[k][j].getXpos() + brick[k][j].getLength() + 3) { 			//Right collision
@@ -150,12 +154,9 @@ public class SimpleSlickGame extends BasicGame {
             		System.out.println("RIGHT");
             		brick[k][j].setXpos(655);
             		brick[k][j].setYpos(725);
+            	} else if(brick[k][j].getXpos() != 655) {
+                	brick[k][j] = new Brick(g, 5+(k*65), 10+(j*25));            		
             	}
-            	
-            	//If the brick hasn't already been hit, then redraw it every frame
-                if(brick[k][j].getXpos() != 655) {
-                	brick[k][j] = new Brick(g, 5+(k*65), 10+(j*25));
-                }
             }
         }         	
     }
