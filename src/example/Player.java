@@ -4,7 +4,7 @@ import org.newdawn.slick.Graphics;
 
 public class Player {
     
-	private float playerLengthMultiplier = 7;		//TODO change back to 7, 1 is for easy debugging
+	private float playerLengthMultiplier = 7;														/*A multiplier to change the size of the player if needed.*/
 	 
 	private float playerLength = SimpleSlickGame.getScreenWidth()/playerLengthMultiplier;
 	private float playerHeight = SimpleSlickGame.getScreenHeight()*0.02f;
@@ -17,8 +17,8 @@ public class Player {
 	 * @param g        Graphic engine used to draw the player
 	 */
     public void createPlayer(Graphics g) {
-        g.drawRect(playerXpos,playerYpos, playerLength,playerHeight);                                  //Draws a rectangle (pos,pos,size,size)
-        g.fillRect(playerXpos,playerYpos, playerLength,playerHeight);								   //Fills the rectangle (pos,pos,size,size)
+        g.drawRect(playerXpos,playerYpos, playerLength,playerHeight);                               /*Draws a rectangle to act as the player (pos,pos,size,size)*/
+        g.fillRect(playerXpos,playerYpos, playerLength,playerHeight);								/*Fills the rectangle (pos,pos,size,size)*/
     }
     
     

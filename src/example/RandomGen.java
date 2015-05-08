@@ -11,6 +11,7 @@ public class RandomGen {
      * @param max       Takes an integer as value and sets it to maximum
      * @return          Returns and integer which is the random value between minimum and maximum
      */
+	/*
 	public static int randInt(int min, int max) {
 		
 		Random rand = new Random();
@@ -19,5 +20,5 @@ public class RandomGen {
 		
 		return randomNum;
 	}
-	
+	*/
 }
