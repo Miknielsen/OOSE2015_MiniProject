@@ -11,8 +11,8 @@ public class Ball {
 	private float speedY = -1.2f;
 	private float coordX = SimpleSlickGame.getScreenWidth() * 0.5f;
 	private float coordY = SimpleSlickGame.getScreenHeight() * 0.85f;
-	private float ballWidth = 15;															//Width of the ball
-	private float ballHeight = 15;															//Height of the ball
+	private float ballWidth = 15;																	/*Width of the ball*/
+	private float ballHeight = 15;																	/*Height of the ball*/
 
 	/**
 	 * Creates the ball
@@ -20,8 +20,8 @@ public class Ball {
 	 * @param g		The graphic engine that is going to be drawing the ball
 	 */
 	public void createBall(Graphics g) {
-		g.drawOval(coordX, coordY, ballWidth, ballHeight);											//Draws the ball / oval (pos,pos,size,size)
-		g.fillOval(coordX, coordY, ballWidth, ballHeight);											//Fills the ball (pos,pos,size,size)
+		g.drawOval(coordX, coordY, ballWidth, ballHeight);											/*Draws the ball*/
+		g.fillOval(coordX, coordY, ballWidth, ballHeight);											/*Fills the ball*/
 	}
 	
 	
@@ -59,7 +59,8 @@ public class Ball {
 	}
 	
 	/**
-	 * Changes the direction of which the ball is moving on y-axis
+	 * Changes the direction of which the ball is moving on y-axis and adds a random number between
+	 * 0 and .3 to the speed on the y-axis
 	 */
 	public void changeYdirection() {
 		Random rand = new Random();

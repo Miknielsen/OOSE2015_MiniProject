@@ -9,7 +9,7 @@ public class Brick {
 	int g_yPos;
 	int length = 55;													//Length of each brick
 	int height = 15;													//Height of each brick
-	 
+	
 	/**
 	 * Creates an enemy brick at a given position and given size
 	 * 
