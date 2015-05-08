@@ -39,7 +39,7 @@ public class SimpleSlickGame extends BasicGame {
     public boolean ballStart = false;
     private boolean bricksCreated = false;															/*Boolean to check if the bricks are created.*/
     
-    int dead = 700;
+    int dead = getScreenWidth() + 100;																	/*A position that is outside of the window to store dead objects*/
 
 
     public SimpleSlickGame(String gamename) {
